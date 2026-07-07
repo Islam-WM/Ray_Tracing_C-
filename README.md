@@ -1,1 +1,1 @@
-# Ray_Tracing_C-
+# Ray_Tracing_C++
