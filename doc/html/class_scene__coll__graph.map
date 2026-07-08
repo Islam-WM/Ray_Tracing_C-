@@ -1,0 +1,9 @@
+<map id="Scene" name="Scene">
+<area shape="rect" id="node1" title="The Scene class stores the objects and lights of a Scene and takes care of the setup of the render." alt="" coords="202,303,261,329"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,213,148,240"/>
+<area shape="rect" id="node3" title=" " alt="" coords="172,213,291,240"/>
+<area shape="rect" id="node4" href="$class_camera.html" title="The Class Camera provides the functionality of the screen." alt="" coords="315,213,383,240"/>
+<area shape="rect" id="node5" href="$class_scene___element.html" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="190,124,305,151"/>
+<area shape="rect" id="node6" title=" " alt="" coords="210,5,285,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="329,124,464,151"/>
+</map>

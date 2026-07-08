@@ -1,0 +1,10 @@
+<map id="Scene_Element" name="Scene_Element">
+<area shape="rect" id="node1" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="66,5,181,32"/>
+<area shape="rect" id="node2" href="$class_camera.html" title="The Class Camera provides the functionality of the screen." alt="" coords="5,80,73,107"/>
+<area shape="rect" id="node3" href="$class_light.html" title="The Light class implements a simple point light." alt="" coords="98,80,149,107"/>
+<area shape="rect" id="node4" href="$class_primitive.html" title="Virtual Primitive class that acts as the base for all renderable objects in the scene." alt="" coords="173,80,247,107"/>
+<area shape="rect" id="node5" href="$class_cube.html" title="The Cube Class is a child class of Primitive." alt="" coords="38,155,91,181"/>
+<area shape="rect" id="node6" href="$class_intersection.html" title="The Intersection Class is a child class of Primitive." alt="" coords="115,155,206,181"/>
+<area shape="rect" id="node7" href="$class_plane.html" title="The Plane Class is a child class of Primitive." alt="" coords="231,155,285,181"/>
+<area shape="rect" id="node8" href="$class_sphere.html" title="The Sphere Class is a child class of Primitive." alt="" coords="309,155,372,181"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Scene_Element" name="Scene_Element">
+<area shape="rect" id="node1" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="5,124,120,151"/>
+<area shape="rect" id="node2" title=" " alt="" coords="25,5,100,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Primitive" name="Primitive">
+<area shape="rect" id="node1" title="Virtual Primitive class that acts as the base for all renderable objects in the scene." alt="" coords="26,247,99,273"/>
+<area shape="rect" id="node2" href="$class_scene___element.html" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="97,147,212,174"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,80,32"/>
+</map>

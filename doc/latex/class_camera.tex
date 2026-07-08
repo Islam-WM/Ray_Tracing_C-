@@ -1,0 +1,268 @@
+\hypertarget{class_camera}{}\doxysection{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+The Class \mbox{\hyperlink{class_camera}{Camera}} provides the functionality of the screen.  
+
+
+
+
+{\ttfamily \#include $<$camera.\+h$>$}
+
+
+
+Inheritance diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_camera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_camera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_aa9226392e7df491887ed1ebdd5e038c1}{Camera}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, double depth, double \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}})
+\begin{DoxyCompactList}\small\item\em Base Constructor\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera_aa3a9d60162f6043bca4aebf613f4c35a}{Camera}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, double \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}})
+\begin{DoxyCompactList}\small\item\em Base Constructor with screen size\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{compute\+\_\+screen\+\_\+points}} ()
+\begin{DoxyCompactList}\small\item\em The function computes a vector with the locations of all pixels in the global space. \end{DoxyCompactList}\item 
+vector$<$ Vector3d $>$ \mbox{\hyperlink{class_camera_ad02014074235cccdb200c70aa0016dad}{send\+\_\+rays}} (vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$ objects, vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$ lights)
+\begin{DoxyCompactList}\small\item\em The function creates and sends rays through all the pixels of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}}
+\item 
+vector$<$ Vector3d $>$ \mbox{\hyperlink{class_camera_a933b62e950043b383e31e22d4967fa80}{screen\+\_\+points}}
+\begin{DoxyCompactList}\small\item\em The vector stores the locations of the pixels in the global space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The Class \mbox{\hyperlink{class_camera}{Camera}} provides the functionality of the screen. 
+
+The \mbox{\hyperlink{class_camera}{Camera}} consists of a screen and a vanishing point. The screen is a set of pixels that have some location in the scene. The \mbox{\hyperlink{class_camera}{Camera}} sends Rays trough every pixel. The vanishing point is the point that all of these rays originate from.
+
+Since \mbox{\hyperlink{class_camera}{Camera}} is a child class of Object, it has a location, rotation and scale. The vanishing point is stored in the location parameter. The rotation is the rotation of the camera and scale consists of the x and y scale of the screen in the scene and the z-\/value of scale correndponds to the depth of the camera (the distance between screen and vanishing point). \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element}{Scene\+\_\+\+Element}}
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+One needs to be careful with how he chooses the x and y scale and resolution of the camera, because otherwise one will and up with a stretched image. It is advised to follow this rule\+: scale\mbox{[}0\mbox{]}/screen\+\_\+res\mbox{[}0\mbox{]} = scale\mbox{[}1\mbox{]}/screen\+\_\+res\mbox{[}1\mbox{]} 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Another way to store the resolution would be to store a dpi and the scale of the screen or to store the dpi and the resolution of the image. We decided to use the resolution and the scale of the screen, as we felt this gives us more control and is easier to work with since both the scale and dpi are values, that don\textquotesingle{}t provide very good intuition for the outcome of the render. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_aa9226392e7df491887ed1ebdd5e038c1}\label{class_camera_aa9226392e7df491887ed1ebdd5e038c1}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{rotation,  }\item[{double}]{depth,  }\item[{double}]{dpi }\end{DoxyParamCaption})}
+
+
+
+Base Constructor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{Scene\+\_\+\+Element\+::rotation}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em dpi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+scale consists of 3 doubles \{x,y,z\} x and y describe the scale of the screen in the global space. z describes the depth of the camera or the distance between the screen and the vanishing point. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+screen\+\_\+res 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+this constructor only considers the depth and uses 1.\+92 and 1.\+08 as default arguments for scale\mbox{[}0\mbox{]} and scale\mbox{[}1\mbox{]} 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_camera_aa3a9d60162f6043bca4aebf613f4c35a}\label{class_camera_aa3a9d60162f6043bca4aebf613f4c35a}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{rotation,  }\item[{Vector3d}]{scale,  }\item[{double}]{dpi }\end{DoxyParamCaption})}
+
+
+
+Base Constructor with screen size\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{Scene\+\_\+\+Element\+::rotation}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em dpi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+scale consists of 3 doubles \{x,y,z\} x and y describe the scale of the screen in the global space. z describes the depth of the camera or the distance between the screen and the vanishing point. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+screen\+\_\+res 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}\label{class_camera_a01f94c3543f56ede7af49dc778f19331}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor\+: 
+
+Default parameters\+:
+
+location \+: \{0,0,0\} ~\newline
+ rotation \+: \{0,0,0\} ~\newline
+ scale \+: \{1.\+92,1.\+08,1\} dpi \+: 1000
+
+\begin{DoxyNote}{Note}
+conresponds to 1920 by 1080 image
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_camera}{Camera(\+Vector3d location, Vector3d rotation, double depth, int dpi)}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}\label{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}} 
+\index{Camera@{Camera}!compute\_screen\_points@{compute\_screen\_points}}
+\index{compute\_screen\_points@{compute\_screen\_points}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{compute\_screen\_points()}{compute\_screen\_points()}}
+{\footnotesize\ttfamily void Camera\+::compute\+\_\+screen\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function computes a vector with the locations of all pixels in the global space. 
+
+\mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{compute\+\_\+screen\+\_\+points()}} computes the location of all the pixels of the screen in the scene and stores them in screen\+\_\+pixels. \begin{DoxySeeAlso}{See also}
+screen\+\_\+pixels 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_camera_ad02014074235cccdb200c70aa0016dad}\label{class_camera_ad02014074235cccdb200c70aa0016dad}} 
+\index{Camera@{Camera}!send\_rays@{send\_rays}}
+\index{send\_rays@{send\_rays}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{send\_rays()}{send\_rays()}}
+{\footnotesize\ttfamily vector$<$ Vector3d $>$ Camera\+::send\+\_\+rays (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$}]{objects,  }\item[{vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$}]{lights }\end{DoxyParamCaption})}
+
+
+
+The function creates and sends rays through all the pixels of the screen. 
+
+\mbox{\hyperlink{class_camera_ad02014074235cccdb200c70aa0016dad}{send\+\_\+rays()}} creates rays starting at the vanishing point(\+Camera\+::location) and going through all the locations stored in screen\+\_\+pixels and calls trace\+\_\+ray() on all of them. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray}{Ray}} 
+
+\mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{Ray\+::trace\+\_\+ray(vector$<$\+Primitive$\ast$$>$ objects, vector$<$\+Light$\ast$$>$ lights, int bounces)}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+image as vector$<$\+Vector3d$>$ 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_a4b5441d3b5923c681c90943665a1f002}\label{class_camera_a4b5441d3b5923c681c90943665a1f002}} 
+\index{Camera@{Camera}!dpi@{dpi}}
+\index{dpi@{dpi}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily double Camera\+::dpi}
+
+@dpi (Dots per \char`\"{}inch\char`\"{})
+
+used to determine the density of pixels
+
+\begin{DoxyNote}{Note}
+The resolution can be computed by x\+\_\+resolution = sale\mbox{[}0\mbox{]}$\ast$dpi, y\+\_\+resolution scale\mbox{[}1\mbox{]}$\ast$dpi 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_camera_a933b62e950043b383e31e22d4967fa80}\label{class_camera_a933b62e950043b383e31e22d4967fa80}} 
+\index{Camera@{Camera}!screen\_points@{screen\_points}}
+\index{screen\_points@{screen\_points}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{screen\_points}{screen\_points}}
+{\footnotesize\ttfamily vector$<$Vector3d$>$ Camera\+::screen\+\_\+points}
+
+
+
+The vector stores the locations of the pixels in the global space. 
+
+We need these points to compute the direction of the rays that are send from the vanishing point of the camera.
+
+The location of the pixels depends on the resolution and the scale of the camera and is computed by the \mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{compute\+\_\+screen\+\_\+points()}} function.
+
+\begin{DoxySeeAlso}{See also}
+Camera\+::screen\+\_\+res 
+
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} the x and y elements of the \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}} describe the \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}} of the screen and the z element describes the depth of the camera i.\+e. the distance between vanishing point and screen. 
+
+\mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{Camera\+::compute\+\_\+screen\+\_\+points()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{camera_8h}{camera.\+h}}\item 
+src/\mbox{\hyperlink{camera_8cpp}{camera.\+cpp}}\end{DoxyCompactItemize}

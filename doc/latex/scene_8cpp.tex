@@ -1,0 +1,131 @@
+\hypertarget{scene_8cpp}{}\doxysection{src/scene.cpp File Reference}
+\label{scene_8cpp}\index{src/scene.cpp@{src/scene.cpp}}
+
+
+This file contains the implementation of the scene class and the global functions.  
+
+
+{\ttfamily \#include \char`\"{}scene.\+h\char`\"{}}\newline
+Include dependency graph for scene.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scene_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ Vector3d $>$ \mbox{\hyperlink{scene_8cpp_af76486de634087dc0d9fa3c6148c896e}{normalize\+\_\+color}} (vector$<$ Vector3d $>$ img\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Takes color of Format (1.\+0,1.\+0,1.\+0) and turns it into (255,255,255) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{scene_8cpp_a07bd94c4169974d349231061428aad3e}{write\+\_\+img\+\_\+open\+\_\+cv}} (vector$<$ Vector3d $>$ img\+\_\+data, int width, int height)
+\begin{DoxyCompactList}\small\item\em Takes an image in vector form and writes it into a png. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{scene_8cpp_ab985adca01660557afcb2e994dde81a3}{find\+Roots}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Takes color of Format (1.\+0,1.\+0,1.\+0) and turns it into (255,255,255) \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{scene_8cpp_a22345b6dbe3086f8fa1bbfbd908600e6}{add}} (Vector3d a, Vector3d b)
+\begin{DoxyCompactList}\small\item\em add 2 vectors logarithmically \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scene_8cpp_ab19f4043730320824beeee02405d87be}\label{scene_8cpp_ab19f4043730320824beeee02405d87be}} 
+double {\bfseries medium\+\_\+index} = 1
+\item 
+\mbox{\Hypertarget{scene_8cpp_a7a055f0bd87980841714eebe7d1945b5}\label{scene_8cpp_a7a055f0bd87980841714eebe7d1945b5}} 
+Vector3d {\bfseries medium\+\_\+ambient} = \{0.\+1,0.\+1,0.\+1\}
+\item 
+\mbox{\Hypertarget{scene_8cpp_a9f583e649d25fa7f387ad8c9465f3886}\label{scene_8cpp_a9f583e649d25fa7f387ad8c9465f3886}} 
+int {\bfseries medium\+\_\+recursion} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of the scene class and the global functions. 
+
+Detailed description of what this source file contains. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scene_8cpp_a22345b6dbe3086f8fa1bbfbd908600e6}\label{scene_8cpp_a22345b6dbe3086f8fa1bbfbd908600e6}} 
+\index{scene.cpp@{scene.cpp}!add@{add}}
+\index{add@{add}!scene.cpp@{scene.cpp}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily Vector3d add (\begin{DoxyParamCaption}\item[{Vector3d}]{a,  }\item[{Vector3d}]{b }\end{DoxyParamCaption})}
+
+
+
+add 2 vectors logarithmically 
+
+\begin{DoxyReturn}{Returns}
+1 -\/ (1-\/a) $\ast$ (1-\/b) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scene_8cpp_ab985adca01660557afcb2e994dde81a3}\label{scene_8cpp_ab985adca01660557afcb2e994dde81a3}} 
+\index{scene.cpp@{scene.cpp}!findRoots@{findRoots}}
+\index{findRoots@{findRoots}!scene.cpp@{scene.cpp}}
+\doxysubsubsection{\texorpdfstring{findRoots()}{findRoots()}}
+{\footnotesize\ttfamily double find\+Roots (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+
+
+Takes color of Format (1.\+0,1.\+0,1.\+0) and turns it into (255,255,255) 
+
+The function calculates the real roots of a quadratic equation in the form of \char`\"{}ax$^\wedge$2 + bx + c = 0\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The coefficient of the quadratic term (x$^\wedge$2). \\
+\hline
+{\em b} & The coefficient of the linear term (x). \\
+\hline
+{\em c} & The constant term. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns a double value representing the smallest real root of the quadratic equation.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Function outputs 0 if a is 0. 
+\end{DoxyNote}
+\mbox{\Hypertarget{scene_8cpp_af76486de634087dc0d9fa3c6148c896e}\label{scene_8cpp_af76486de634087dc0d9fa3c6148c896e}} 
+\index{scene.cpp@{scene.cpp}!normalize\_color@{normalize\_color}}
+\index{normalize\_color@{normalize\_color}!scene.cpp@{scene.cpp}}
+\doxysubsubsection{\texorpdfstring{normalize\_color()}{normalize\_color()}}
+{\footnotesize\ttfamily vector$<$ Vector3d $>$ normalize\+\_\+color (\begin{DoxyParamCaption}\item[{vector$<$ Vector3d $>$}]{img\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Takes color of Format (1.\+0,1.\+0,1.\+0) and turns it into (255,255,255) 
+
+Takes an input vector with RGB values in double range, limits the range to \mbox{[}0,1\mbox{]} (cuts sets everything bigger than 1 to 1) and multiplies the values with 255. So that the output is a vector of RGB values with range \mbox{[}0,255\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imag\+\_\+data} & A vector of Vector3d that store the color\+\_\+data in RGB format with double range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of of Vector3d with range \mbox{[}0,255\mbox{]}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+All values of the input data that are bigger than 1.\+0 are mapped to 1.\+0 to limit the color range. 
+\end{DoxyNote}
+\mbox{\Hypertarget{scene_8cpp_a07bd94c4169974d349231061428aad3e}\label{scene_8cpp_a07bd94c4169974d349231061428aad3e}} 
+\index{scene.cpp@{scene.cpp}!write\_img\_open\_cv@{write\_img\_open\_cv}}
+\index{write\_img\_open\_cv@{write\_img\_open\_cv}!scene.cpp@{scene.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_img\_open\_cv()}{write\_img\_open\_cv()}}
+{\footnotesize\ttfamily void write\+\_\+img\+\_\+open\+\_\+cv (\begin{DoxyParamCaption}\item[{vector$<$ Vector3d $>$}]{img\+\_\+data,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Takes an image in vector form and writes it into a png. 
+
+Takes an image in format vector of Vector3d with double range, normalizes it, and converts it into an image that is saved in \char`\"{}output\+\_\+image.\+png\char`\"{}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{scene_8h_af76486de634087dc0d9fa3c6148c896e}{normalize\+\_\+color(vector$<$\+Vector3d$>$ img\+\_\+data)}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em imag\+\_\+data} & A vector of Vector3d that store the color\+\_\+data in RGB format with double range. \\
+\hline
+{\em width} & Width of the image. \\
+\hline
+{\em height} & Height of the image. \\
+\hline
+\end{DoxyParams}

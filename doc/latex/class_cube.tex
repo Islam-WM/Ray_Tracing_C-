@@ -1,0 +1,186 @@
+\hypertarget{class_cube}{}\doxysection{Cube Class Reference}
+\label{class_cube}\index{Cube@{Cube}}
+
+
+The \mbox{\hyperlink{class_cube}{Cube}} Class is a child class of \mbox{\hyperlink{class_primitive}{Primitive}}.  
+
+
+
+
+{\ttfamily \#include $<$objects.\+h$>$}
+
+
+
+Inheritance diagram for Cube\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_cube__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cube\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_cube__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cube_aadd05458d0f3fbc845bf89c554c21347}{Cube}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, double \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, double \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Base constructor\+: \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{is\+\_\+hit}} (\mbox{\hyperlink{class_ray}{Ray}} $\ast$r) override
+\begin{DoxyCompactList}\small\item\em The function implements the \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{is\+\_\+hit()}} function from the Primitve class. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{inside}} (Vector3d point) override
+\begin{DoxyCompactList}\small\item\em The function implements the \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{inside()}} function from the Primitve class. \end{DoxyCompactList}\item 
+virtual Vector3d \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{normal}} (Vector3d intersection) override
+\begin{DoxyCompactList}\small\item\em The function implements the \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{normal()}} function from the \mbox{\hyperlink{class_primitive}{Primitive}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cube_ac9781097f81ce80b1d8150c568c15df7}\label{class_cube_ac9781097f81ce80b1d8150c568c15df7}} 
+vector$<$ \mbox{\hyperlink{class_plane}{Plane}} $\ast$ $>$ {\bfseries planes}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_cube}{Cube}} Class is a child class of \mbox{\hyperlink{class_primitive}{Primitive}}. 
+
+The \mbox{\hyperlink{class_cube}{Cube}} Class provides a composition of six planes that can be rendered. It defines the \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{is\+\_\+hit()}}, \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{inside()}} and \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{normal()}} methods from the \mbox{\hyperlink{class_primitive}{Primitive}} Class. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive}{Primitive}}
+\end{DoxySeeAlso}
+Also check out\+: \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_sphere}{Sphere}} 
+
+\mbox{\hyperlink{class_plane}{Plane}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]location, rotation, scale\end{DoxyRefDesc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cube_aadd05458d0f3fbc845bf89c554c21347}\label{class_cube_aadd05458d0f3fbc845bf89c554c21347}} 
+\index{Cube@{Cube}!Cube@{Cube}}
+\index{Cube@{Cube}!Cube@{Cube}}
+\doxysubsubsection{\texorpdfstring{Cube()}{Cube()}}
+{\footnotesize\ttfamily Cube\+::\+Cube (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{rotation,  }\item[{Vector3d}]{scale,  }\item[{Vector3d}]{ambient,  }\item[{Vector3d}]{diffuse,  }\item[{Vector3d}]{specular,  }\item[{Vector3d}]{reflected,  }\item[{Vector3d}]{refracted,  }\item[{double}]{shininess,  }\item[{double}]{ref\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Base constructor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{Scene\+\_\+\+Element\+::rotation}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Primitive\+::color 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em refraction\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{Primitive\+::ref\+\_\+index}}
+
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}\label{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}} 
+\index{Cube@{Cube}!inside@{inside}}
+\index{inside@{inside}!Cube@{Cube}}
+\doxysubsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Cube\+::inside (\begin{DoxyParamCaption}\item[{Vector3d}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The function implements the \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{inside()}} function from the Primitve class. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}{Primitive\+::is\+\_\+hit()}}
+\end{DoxySeeAlso}
+The function checks if a point is inside the primitive primitive \begin{DoxyReturn}{Returns}
+true if inside else false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_primitive_a94312471b68c15fc21cda1adf5bfc1a1}{Primitive}}.
+
+\mbox{\Hypertarget{class_cube_a7b8de34a4098588524afdb02343401db}\label{class_cube_a7b8de34a4098588524afdb02343401db}} 
+\index{Cube@{Cube}!is\_hit@{is\_hit}}
+\index{is\_hit@{is\_hit}!Cube@{Cube}}
+\doxysubsubsection{\texorpdfstring{is\_hit()}{is\_hit()}}
+{\footnotesize\ttfamily double Cube\+::is\+\_\+hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ray}{Ray}} $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The function implements the \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{is\+\_\+hit()}} function from the Primitve class. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}{Primitive\+::is\+\_\+hit()}}
+\end{DoxySeeAlso}
+The function checks if the primitive is hit by the \mbox{\hyperlink{class_ray}{Ray}} r and returns the distance \begin{DoxyReturn}{Returns}
+distance between Object and \mbox{\hyperlink{class_ray}{Ray}} location. or if not hit -\/1. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}{Primitive}}.
+
+\mbox{\Hypertarget{class_cube_a13e188db901ad6eee96f71353095761b}\label{class_cube_a13e188db901ad6eee96f71353095761b}} 
+\index{Cube@{Cube}!normal@{normal}}
+\index{normal@{normal}!Cube@{Cube}}
+\doxysubsubsection{\texorpdfstring{normal()}{normal()}}
+{\footnotesize\ttfamily Vector3d Cube\+::normal (\begin{DoxyParamCaption}\item[{Vector3d}]{intersection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The function implements the \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{normal()}} function from the \mbox{\hyperlink{class_primitive}{Primitive}} class. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}{Primitive\+::normal()}}
+\end{DoxySeeAlso}
+The function computes the normal of the surface of the object at the intersection point. \begin{DoxyReturn}{Returns}
+normal vector of the surface at intersection point 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}{Primitive}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{objects_8h}{objects.\+h}}\item 
+src/\mbox{\hyperlink{objects_8cpp}{objects.\+cpp}}\end{DoxyCompactItemize}

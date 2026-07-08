@@ -1,0 +1,391 @@
+\hypertarget{class_primitive}{}\doxysection{Primitive Class Reference}
+\label{class_primitive}\index{Primitive@{Primitive}}
+
+
+Virtual \mbox{\hyperlink{class_primitive}{Primitive}} class that acts as the base for all renderable objects in the scene.  
+
+
+
+
+{\ttfamily \#include $<$objects.\+h$>$}
+
+
+
+Inheritance diagram for Primitive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_primitive__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Primitive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_primitive__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_primitive_ab16e24b03c62f33442c4b1509bc726dd}{Primitive}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, double \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, double refraction\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Base constructor\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_primitive_ae6b6e9440d482575d1dcbf77a936c201}{Primitive}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor\+: \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_primitive_ac7d851ed3819010aa932c090a890cde9}{get\+\_\+color}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_primitive_ac7d851ed3819010aa932c090a890cde9}{get\+\_\+color()}} returns the rotation of the \mbox{\hyperlink{class_primitive}{Primitive}} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}{get\+\_\+refraction\+\_\+index}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}{get\+\_\+refraction\+\_\+index()}} returns the rotation of the \mbox{\hyperlink{class_primitive}{Primitive}} \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_primitive_a94312471b68c15fc21cda1adf5bfc1a1}{inside}} (Vector3d point)=0
+\begin{DoxyCompactList}\small\item\em Abstract method that checks if a point is inside a \mbox{\hyperlink{class_primitive}{Primitive}}. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}{is\+\_\+hit}} (\mbox{\hyperlink{class_ray}{Ray}} $\ast$r)=0
+\begin{DoxyCompactList}\small\item\em Abstract method that returns wether a \mbox{\hyperlink{class_primitive}{Primitive}} is hit. \end{DoxyCompactList}\item 
+virtual Vector3d \mbox{\hyperlink{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}{normal}} (Vector3d intersection)=0
+\begin{DoxyCompactList}\small\item\em Abstract method that returns the normal vector of the \mbox{\hyperlink{class_primitive}{Primitive}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ray}{Ray}} \mbox{\hyperlink{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}{reflect\+\_\+ray}} (\mbox{\hyperlink{class_ray}{Ray}} r, Vector3d intersection)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}{reflect\+\_\+ray()}} takes a \mbox{\hyperlink{class_ray}{Ray}} r and returns the reflected \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ray}{Ray}} \mbox{\hyperlink{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}{refract\+\_\+ray}} (\mbox{\hyperlink{class_ray}{Ray}} r, Vector3d intersection)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}{refract\+\_\+ray()}} takes a \mbox{\hyperlink{class_ray}{Ray}} r and returns the refracted \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}
+\begin{DoxyCompactList}\small\item\em color stores the ambient values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}
+\begin{DoxyCompactList}\small\item\em diffuse stores the diffuse values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}
+\begin{DoxyCompactList}\small\item\em specular stores the specular values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}
+\begin{DoxyCompactList}\small\item\em reflected stores the reflected values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}
+\begin{DoxyCompactList}\small\item\em refracted stores the refracted values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}
+\begin{DoxyCompactList}\small\item\em shininess stores the shininess value of the object. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em ref\+\_\+index stores the refraction index of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Virtual \mbox{\hyperlink{class_primitive}{Primitive}} class that acts as the base for all renderable objects in the scene. 
+
+The \mbox{\hyperlink{class_primitive}{Primitive}} Class builds up on the \mbox{\hyperlink{class_scene___element}{Scene\+\_\+\+Element}} Class and adds the functionality needed for an object to be rendered in the scene. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element}{Scene\+\_\+\+Element}} While \mbox{\hyperlink{class_scene___element}{Scene\+\_\+\+Element}} is the base for all non-\/temporary Elements in the scene, the \mbox{\hyperlink{class_primitive}{Primitive}} Class is not a parent of for example the camera that does not need to be included in the rendered image.
+\end{DoxySeeAlso}
+Therefore the \mbox{\hyperlink{class_primitive}{Primitive}} Class provides methods to compute e.\+g. reflection\+\_\+angles and color values. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_primitive_ab16e24b03c62f33442c4b1509bc726dd}\label{class_primitive_ab16e24b03c62f33442c4b1509bc726dd}} 
+\index{Primitive@{Primitive}!Primitive@{Primitive}}
+\index{Primitive@{Primitive}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{Primitive()}{Primitive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Primitive\+::\+Primitive (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{rotation,  }\item[{Vector3d}]{scale,  }\item[{Vector3d}]{ambient,  }\item[{Vector3d}]{diffuse,  }\item[{Vector3d}]{specular,  }\item[{Vector3d}]{reflected,  }\item[{Vector3d}]{refracted,  }\item[{double}]{shininess,  }\item[{double}]{refraction\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Base constructor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{Scene\+\_\+\+Element\+::rotation}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{Scene\+\_\+\+Element\+::scale}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ambient} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{Primitive\+::ambient}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em refraction\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{Primitive\+::ref\+\_\+index}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_primitive_ae6b6e9440d482575d1dcbf77a936c201}\label{class_primitive_ae6b6e9440d482575d1dcbf77a936c201}} 
+\index{Primitive@{Primitive}!Primitive@{Primitive}}
+\index{Primitive@{Primitive}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{Primitive()}{Primitive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Primitive\+::\+Primitive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor\+: 
+
+Default parameters\+:
+
+location \+: \{0,0,0\} ~\newline
+ rotation \+: \{0,0,0\} ~\newline
+ scale \+: \{0,0,0\} ~\newline
+ color \+: \{0.\+5,0.\+5,0.\+5\} ~\newline
+ ref\+\_\+index \+: 1 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_primitive_ac7d851ed3819010aa932c090a890cde9}\label{class_primitive_ac7d851ed3819010aa932c090a890cde9}} 
+\index{Primitive@{Primitive}!get\_color@{get\_color}}
+\index{get\_color@{get\_color}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{get\_color()}{get\_color()}}
+{\footnotesize\ttfamily Vector3d Primitive\+::get\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_primitive_ac7d851ed3819010aa932c090a890cde9}{get\+\_\+color()}} returns the rotation of the \mbox{\hyperlink{class_primitive}{Primitive}} 
+
+\begin{DoxyReturn}{Returns}
+color of the \mbox{\hyperlink{class_primitive}{Primitive}}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}{get\+\_\+refraction\+\_\+index()}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+For location, rotation and scale use \+: 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_af1af90ea186ca61ed4dbb9e32bfe9b13}{Scene\+\_\+\+Element\+::get\+\_\+scale()}} 
+
+\mbox{\hyperlink{class_scene___element_abd40ed197d0a8ab78477eabf22fd663e}{Scene\+\_\+\+Element\+::get\+\_\+location()}} 
+
+\mbox{\hyperlink{class_scene___element_af1af90ea186ca61ed4dbb9e32bfe9b13}{Scene\+\_\+\+Element\+::get\+\_\+scale()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}\label{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}} 
+\index{Primitive@{Primitive}!get\_refraction\_index@{get\_refraction\_index}}
+\index{get\_refraction\_index@{get\_refraction\_index}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{get\_refraction\_index()}{get\_refraction\_index()}}
+{\footnotesize\ttfamily double Primitive\+::get\+\_\+refraction\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}{get\+\_\+refraction\+\_\+index()}} returns the rotation of the \mbox{\hyperlink{class_primitive}{Primitive}} 
+
+\begin{DoxyReturn}{Returns}
+Refraction index of the \mbox{\hyperlink{class_primitive}{Primitive}}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_primitive_ac7d851ed3819010aa932c090a890cde9}{get\+\_\+color()}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+For location, rotation and scale use \+: 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_af1af90ea186ca61ed4dbb9e32bfe9b13}{Scene\+\_\+\+Element\+::get\+\_\+scale()}} 
+
+\mbox{\hyperlink{class_scene___element_abd40ed197d0a8ab78477eabf22fd663e}{Scene\+\_\+\+Element\+::get\+\_\+location()}} 
+
+\mbox{\hyperlink{class_scene___element_af1af90ea186ca61ed4dbb9e32bfe9b13}{Scene\+\_\+\+Element\+::get\+\_\+scale()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_primitive_a94312471b68c15fc21cda1adf5bfc1a1}\label{class_primitive_a94312471b68c15fc21cda1adf5bfc1a1}} 
+\index{Primitive@{Primitive}!inside@{inside}}
+\index{inside@{inside}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily virtual bool Primitive\+::inside (\begin{DoxyParamCaption}\item[{Vector3d}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract method that checks if a point is inside a \mbox{\hyperlink{class_primitive}{Primitive}}. 
+
+\begin{DoxyReturn}{Returns}
+If the point is inside the \mbox{\hyperlink{class_primitive}{Primitive}} it returns true else false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Abstract method\+: Must be implemented by subclasses! 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_sphere_a45a84eb44d87e83f79f20905370539fb}{Sphere}}, \mbox{\hyperlink{class_plane_aba7505e5f83e7396b57513d924c2d922}{Plane}}, \mbox{\hyperlink{class_intersection_a598d498f22273cb7ff39c1b3ba7fd40f}{Intersection}}, and \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{Cube}}.
+
+\mbox{\Hypertarget{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}\label{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}} 
+\index{Primitive@{Primitive}!is\_hit@{is\_hit}}
+\index{is\_hit@{is\_hit}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{is\_hit()}{is\_hit()}}
+{\footnotesize\ttfamily virtual double Primitive\+::is\+\_\+hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ray}{Ray}} $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract method that returns wether a \mbox{\hyperlink{class_primitive}{Primitive}} is hit. 
+
+\begin{DoxyReturn}{Returns}
+If a \mbox{\hyperlink{class_primitive}{Primitive}} is hit by the \mbox{\hyperlink{class_ray}{Ray}} it returns the distance to the origin of the ray. If it is not hit the method returns -\/1.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Abstract method\+: Must be implemented by subclasses! 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_sphere_afb2baf5e8a0fad421dfdf958e4a6a0b6}{Sphere}}, \mbox{\hyperlink{class_plane_a85761aa093068d0a001a8d6f973b098e}{Plane}}, \mbox{\hyperlink{class_intersection_aedd77d7d0e5b3ffbf4da5dffc675c81d}{Intersection}}, and \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{Cube}}.
+
+\mbox{\Hypertarget{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}\label{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}} 
+\index{Primitive@{Primitive}!normal@{normal}}
+\index{normal@{normal}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{normal()}{normal()}}
+{\footnotesize\ttfamily virtual Vector3d Primitive\+::normal (\begin{DoxyParamCaption}\item[{Vector3d}]{intersection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract method that returns the normal vector of the \mbox{\hyperlink{class_primitive}{Primitive}}. 
+
+\begin{DoxyReturn}{Returns}
+The normal vector of the surface of the \mbox{\hyperlink{class_primitive}{Primitive}} at the intersection point.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Abstract method\+: Must be implemented by subclasses! 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_sphere_a9b9c8ec63cd1aafc3f52a689933b897b}{Sphere}}, \mbox{\hyperlink{class_plane_ac6195baeb8e5eb82f82acb20faea6004}{Plane}}, \mbox{\hyperlink{class_intersection_a2ee1a3db3494931f34aeb418ee3595db}{Intersection}}, and \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{Cube}}.
+
+\mbox{\Hypertarget{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}\label{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}} 
+\index{Primitive@{Primitive}!reflect\_ray@{reflect\_ray}}
+\index{reflect\_ray@{reflect\_ray}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{reflect\_ray()}{reflect\_ray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ray}{Ray}} Primitive\+::reflect\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ray}{Ray}}}]{r,  }\item[{Vector3d}]{intersection }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}{reflect\+\_\+ray()}} takes a \mbox{\hyperlink{class_ray}{Ray}} r and returns the reflected \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{} 
+
+The method takes a \mbox{\hyperlink{class_ray}{Ray}} r and an intersection point and computes the reflected \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{}. r\textquotesingle{} has the intersection point as it\textquotesingle{}s location.
+
+\begin{DoxyReturn}{Returns}
+the reflected \mbox{\hyperlink{class_ray}{Ray}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}\label{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}} 
+\index{Primitive@{Primitive}!refract\_ray@{refract\_ray}}
+\index{refract\_ray@{refract\_ray}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{refract\_ray()}{refract\_ray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ray}{Ray}} Primitive\+::refract\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ray}{Ray}}}]{r,  }\item[{Vector3d}]{intersection }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}{refract\+\_\+ray()}} takes a \mbox{\hyperlink{class_ray}{Ray}} r and returns the refracted \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{} 
+
+The method takes a \mbox{\hyperlink{class_ray}{Ray}} r and an intersection point and computes the refracted \mbox{\hyperlink{class_ray}{Ray}} r\textquotesingle{}. r\textquotesingle{} has the intersection point as it\textquotesingle{}s location.
+
+\begin{DoxyReturn}{Returns}
+the refracted \mbox{\hyperlink{class_ray}{Ray}} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_primitive_ad305d087a5f32c1812001035cb061a74}\label{class_primitive_ad305d087a5f32c1812001035cb061a74}} 
+\index{Primitive@{Primitive}!ambient@{ambient}}
+\index{ambient@{ambient}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{ambient}{ambient}}
+{\footnotesize\ttfamily Vector3d Primitive\+::ambient}
+
+
+
+color stores the ambient values of the object. ~\newline
+ 
+
+The format of ambient is \{red, green, blue\} \mbox{\Hypertarget{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}\label{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}} 
+\index{Primitive@{Primitive}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{diffuse}{diffuse}}
+{\footnotesize\ttfamily Vector3d Primitive\+::diffuse}
+
+
+
+diffuse stores the diffuse values of the object. ~\newline
+ 
+
+The format of diffuse is \{red, green, blue\} \mbox{\Hypertarget{class_primitive_aed2915dec13905226065c5dc018e2e60}\label{class_primitive_aed2915dec13905226065c5dc018e2e60}} 
+\index{Primitive@{Primitive}!ref\_index@{ref\_index}}
+\index{ref\_index@{ref\_index}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{ref\_index}{ref\_index}}
+{\footnotesize\ttfamily double Primitive\+::ref\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ref\+\_\+index stores the refraction index of the object 
+
+The refraction index is used to calculate the refraction angle when going from one object/medium into another.
+
+\begin{DoxyNote}{Note}
+Not every child object needs a refraction index, e.\+g. \mbox{\hyperlink{class_camera}{Camera}}. For these objects ref\+\_\+index is set to a default value 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Object(\+Vector3d location, Vector3d rotation, Vector3d scale, Vector3d color) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}\label{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}} 
+\index{Primitive@{Primitive}!reflected@{reflected}}
+\index{reflected@{reflected}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{reflected}{reflected}}
+{\footnotesize\ttfamily Vector3d Primitive\+::reflected}
+
+
+
+reflected stores the reflected values of the object. ~\newline
+ 
+
+The format of reflected is \{red, green, blue\} \mbox{\Hypertarget{class_primitive_aba92d74c989972a94ffcfa139f6eea74}\label{class_primitive_aba92d74c989972a94ffcfa139f6eea74}} 
+\index{Primitive@{Primitive}!refracted@{refracted}}
+\index{refracted@{refracted}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{refracted}{refracted}}
+{\footnotesize\ttfamily Vector3d Primitive\+::refracted}
+
+
+
+refracted stores the refracted values of the object. ~\newline
+ 
+
+The format of refracted is \{red, green, blue\} \mbox{\Hypertarget{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}\label{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}} 
+\index{Primitive@{Primitive}!shininess@{shininess}}
+\index{shininess@{shininess}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{shininess}{shininess}}
+{\footnotesize\ttfamily double Primitive\+::shininess}
+
+
+
+shininess stores the shininess value of the object. ~\newline
+ 
+
+The shininess value is used to compute the specular reflection. \mbox{\Hypertarget{class_primitive_a0a978c7f7d149589a871cce241867a06}\label{class_primitive_a0a978c7f7d149589a871cce241867a06}} 
+\index{Primitive@{Primitive}!specular@{specular}}
+\index{specular@{specular}!Primitive@{Primitive}}
+\doxysubsubsection{\texorpdfstring{specular}{specular}}
+{\footnotesize\ttfamily Vector3d Primitive\+::specular}
+
+
+
+specular stores the specular values of the object. ~\newline
+ 
+
+The format of specular is \{red, green, blue\} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{objects_8h}{objects.\+h}}\item 
+src/\mbox{\hyperlink{objects_8cpp}{objects.\+cpp}}\end{DoxyCompactItemize}

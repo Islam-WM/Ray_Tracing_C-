@@ -1,0 +1,135 @@
+\hypertarget{objects_8h_source}{}\doxysection{objects.\+h}
+\label{objects_8h_source}\index{include/objects.h@{include/objects.h}}
+\mbox{\hyperlink{objects_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene___element}{Scene\_Element}}\{}
+\DoxyCodeLine{20     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{27     Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{35     Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42     Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}};}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     \textcolor{keyword}{public}:}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_scene___element_affc3d638c0efc2cd8e8316693de50223}{Scene\_Element}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}});}
+\DoxyCodeLine{60     }
+\DoxyCodeLine{71     \mbox{\hyperlink{class_scene___element_affc3d638c0efc2cd8e8316693de50223}{Scene\_Element}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{82     Vector3d \mbox{\hyperlink{class_scene___element_abd40ed197d0a8ab78477eabf22fd663e}{get\_location}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{93     Vector3d \mbox{\hyperlink{class_scene___element_a65da016c7af9333bf524d68b993ea238}{get\_rotation}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{104     Vector3d \mbox{\hyperlink{class_scene___element_af1af90ea186ca61ed4dbb9e32bfe9b13}{get\_scale}}();}
+\DoxyCodeLine{105     }
+\DoxyCodeLine{123     Vector3d \mbox{\hyperlink{class_scene___element_a968b37a2696d2ee18ac3744fc4962e7d}{global}}(\textcolor{keyword}{const} Vector3d\& local\_point, \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}});}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{138 \textcolor{keyword}{class }\mbox{\hyperlink{class_primitive}{Primitive}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_scene___element}{Scene\_Element}}\{}
+\DoxyCodeLine{139         \textcolor{keyword}{public}:}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{148     Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}};}
+\DoxyCodeLine{149     }
+\DoxyCodeLine{157     Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{166     Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{175     Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{184     Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{193     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{208     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\_index}}; \textcolor{comment}{// refraction index of the material}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{keyword}{public}:}
+\DoxyCodeLine{221     \mbox{\hyperlink{class_primitive_ae6b6e9440d482575d1dcbf77a936c201}{Primitive}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, \textcolor{keywordtype}{double} refraction\_index);}
+\DoxyCodeLine{222     }
+\DoxyCodeLine{235     \mbox{\hyperlink{class_primitive_ae6b6e9440d482575d1dcbf77a936c201}{Primitive}}();}
+\DoxyCodeLine{236         }
+\DoxyCodeLine{251     Vector3d \mbox{\hyperlink{class_primitive_ac7d851ed3819010aa932c090a890cde9}{get\_color}}();}
+\DoxyCodeLine{252     }
+\DoxyCodeLine{267     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a74f8c70cc853f63454c0ffa61d6b7d4f}{get\_refraction\_index}}();}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{276     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_primitive_a94312471b68c15fc21cda1adf5bfc1a1}{inside}}(Vector3d point) = 0;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{285     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a7a4d11038ad8d476f369fda6b1986a05}{is\_hit}}(\mbox{\hyperlink{class_ray}{Ray}}* r) = 0;}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{294     \textcolor{keyword}{virtual} Vector3d \mbox{\hyperlink{class_primitive_a7bc07c80b9b9c274dbc3ca7f65522226}{normal}}(Vector3d intersection) = 0;}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{304     \mbox{\hyperlink{class_ray}{Ray}} \mbox{\hyperlink{class_primitive_a19a54c8962a4a305de40f1fa2ac87932}{reflect\_ray}}(\mbox{\hyperlink{class_ray}{Ray}} r, Vector3d intersection);}
+\DoxyCodeLine{305     }
+\DoxyCodeLine{314     \mbox{\hyperlink{class_ray}{Ray}} \mbox{\hyperlink{class_primitive_a34f9a501e7f562aafb9b5892dedbdaa0}{refract\_ray}}(\mbox{\hyperlink{class_ray}{Ray}} r, Vector3d intersection);}
+\DoxyCodeLine{315 \};}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 }
+\DoxyCodeLine{328 \textcolor{keyword}{class }\mbox{\hyperlink{class_sphere}{Sphere}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_primitive}{Primitive}}\{}
+\DoxyCodeLine{329     \textcolor{keyword}{public}:}
+\DoxyCodeLine{330     }
+\DoxyCodeLine{342     \mbox{\hyperlink{class_sphere_a04c606e02e93d5ae4d32620e085dcae3}{Sphere}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, \textcolor{keywordtype}{double} refraction\_index);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{351     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sphere_afb2baf5e8a0fad421dfdf958e4a6a0b6}{is\_hit}}(\mbox{\hyperlink{class_ray}{Ray}}* r) \textcolor{keyword}{override}; }
+\DoxyCodeLine{352     }
+\DoxyCodeLine{360     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sphere_a45a84eb44d87e83f79f20905370539fb}{inside}}(Vector3d point) \textcolor{keyword}{override}; }
+\DoxyCodeLine{361 }
+\DoxyCodeLine{369     \textcolor{keyword}{virtual} Vector3d \mbox{\hyperlink{class_sphere_a9b9c8ec63cd1aafc3f52a689933b897b}{normal}}(Vector3d intersection) \textcolor{keyword}{override};}
+\DoxyCodeLine{370 \};}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 }
+\DoxyCodeLine{384 \textcolor{keyword}{class }\mbox{\hyperlink{class_plane}{Plane}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_primitive}{Primitive}}\{}
+\DoxyCodeLine{385     \textcolor{keyword}{public}:}
+\DoxyCodeLine{386     }
+\DoxyCodeLine{400     \mbox{\hyperlink{class_plane_aaee6cbbc577efe76951da565f9f4c7b3}{Plane}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\_index}});}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{411     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_plane_a98be635ff55b1ab428f6c707e245f55c}{compute\_theta}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}});}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{420     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_plane_a85761aa093068d0a001a8d6f973b098e}{is\_hit}}(\mbox{\hyperlink{class_ray}{Ray}}* r) \textcolor{keyword}{override}; }
+\DoxyCodeLine{421 }
+\DoxyCodeLine{429     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_plane_aba7505e5f83e7396b57513d924c2d922}{inside}}(Vector3d point) \textcolor{keyword}{override}; }
+\DoxyCodeLine{430 }
+\DoxyCodeLine{438     \textcolor{keyword}{virtual} Vector3d \mbox{\hyperlink{class_plane_ac6195baeb8e5eb82f82acb20faea6004}{normal}}(Vector3d intersection) \textcolor{keyword}{override};}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \};}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 }
+\DoxyCodeLine{457 \textcolor{keyword}{class }\mbox{\hyperlink{class_intersection}{Intersection}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_primitive}{Primitive}}\{}
+\DoxyCodeLine{458     vector<Primitive*> components;}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460     \textcolor{keyword}{public}:}
+\DoxyCodeLine{461     }
+\DoxyCodeLine{474     \mbox{\hyperlink{class_intersection_a7642d29499686193837a75a7c5ef422e}{Intersection}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\_index}}, vector<Primitive*> components);}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{483     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_intersection_aedd77d7d0e5b3ffbf4da5dffc675c81d}{is\_hit}}(\mbox{\hyperlink{class_ray}{Ray}}* r) \textcolor{keyword}{override}; }
+\DoxyCodeLine{484 }
+\DoxyCodeLine{492     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_intersection_a598d498f22273cb7ff39c1b3ba7fd40f}{inside}}(Vector3d point) \textcolor{keyword}{override}; }
+\DoxyCodeLine{493     }
+\DoxyCodeLine{501     \textcolor{keyword}{virtual} Vector3d \mbox{\hyperlink{class_intersection_a2ee1a3db3494931f34aeb418ee3595db}{normal}}(Vector3d intersection) \textcolor{keyword}{override};}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \};}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505 }
+\DoxyCodeLine{519 \textcolor{keyword}{class }\mbox{\hyperlink{class_cube}{Cube}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_primitive}{Primitive}}\{}
+\DoxyCodeLine{520     vector<Plane*> planes;}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522     \textcolor{keyword}{public}:}
+\DoxyCodeLine{523     }
+\DoxyCodeLine{536     \mbox{\hyperlink{class_cube_aadd05458d0f3fbc845bf89c554c21347}{Cube}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, Vector3d \mbox{\hyperlink{class_primitive_ad305d087a5f32c1812001035cb061a74}{ambient}}, Vector3d \mbox{\hyperlink{class_primitive_a1d7782d44bfd2743376bd87a594fa4dd}{diffuse}}, Vector3d \mbox{\hyperlink{class_primitive_a0a978c7f7d149589a871cce241867a06}{specular}}, Vector3d \mbox{\hyperlink{class_primitive_ae7b2eb96e248072bf3502e16a40b27b2}{reflected}}, Vector3d \mbox{\hyperlink{class_primitive_aba92d74c989972a94ffcfa139f6eea74}{refracted}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_a55ca35349dfcf52ac21237f0593d6ed4}{shininess}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_primitive_aed2915dec13905226065c5dc018e2e60}{ref\_index}});}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{545     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_cube_a7b8de34a4098588524afdb02343401db}{is\_hit}}(\mbox{\hyperlink{class_ray}{Ray}}* r) \textcolor{keyword}{override}; }
+\DoxyCodeLine{546 }
+\DoxyCodeLine{554     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_cube_af1d0bd832eca9e43de7ecd9849bfc743}{inside}}(Vector3d point) \textcolor{keyword}{override}; }
+\DoxyCodeLine{555     }
+\DoxyCodeLine{563     \textcolor{keyword}{virtual} Vector3d \mbox{\hyperlink{class_cube_a13e188db901ad6eee96f71353095761b}{normal}}(Vector3d intersection) \textcolor{keyword}{override};}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565 \};}
+
+\end{DoxyCode}

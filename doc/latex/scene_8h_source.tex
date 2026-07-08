@@ -1,0 +1,67 @@
+\hypertarget{scene_8h_source}{}\doxysection{scene.\+h}
+\label{scene_8h_source}\index{include/scene.h@{include/scene.h}}
+\mbox{\hyperlink{scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_USE\_MATH\_DEFINES }\textcolor{comment}{// to get pi as M\_PI}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <Eigen/Geometry>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <opencv2/opencv.hpp>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using }std::cout, std::endl, std::vector, std::string, std::ostream;}
+\DoxyCodeLine{22 \textcolor{keyword}{using }Eigen::Vector3d, Eigen::Matrix3d;}
+\DoxyCodeLine{23 \textcolor{keyword}{using }std::min,std::max;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{// global variables}}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} medium\_index;}
+\DoxyCodeLine{27 \textcolor{keyword}{extern} Vector3d medium\_ambient;}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} medium\_recursion;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{class_ray}{Ray}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}json/json.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objects_8h}{objects.h}}"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{light_8h}{light.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{camera_8h}{camera.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ray_8h}{ray.h}}"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{// global functions:}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{54 vector<Vector3d> \mbox{\hyperlink{scene_8h_af76486de634087dc0d9fa3c6148c896e}{normalize\_color}}(vector<Vector3d> img\_data);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{scene_8h_a07bd94c4169974d349231061428aad3e}{write\_img\_open\_cv}}(vector<Vector3d> img\_data ,\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{double} \mbox{\hyperlink{scene_8h_ab985adca01660557afcb2e994dde81a3}{findRoots}}(\textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} c);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{88 Vector3d \mbox{\hyperlink{scene_8h_a22345b6dbe3086f8fa1bbfbd908600e6}{add}}(Vector3d a, Vector3d b);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{// SCENE:}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{101 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}}\{}
+\DoxyCodeLine{102     }
+\DoxyCodeLine{109     vector<Primitive*> \mbox{\hyperlink{class_scene_a1c6fc45451ebe091b9741f11acb3cce2}{objects}};}
+\DoxyCodeLine{110         }
+\DoxyCodeLine{117     vector<Light*> \mbox{\hyperlink{class_scene_a0cb559746762b88aafb3a6b5c45576bc}{lights}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123     \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a8b48957edffe8db43cbbd879386ee9c5}{camera}};}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{125     \textcolor{keyword}{public}:}
+\DoxyCodeLine{130     \mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a1a972acb9024dd0fa94345f0e937453a}{load\_settings}}();}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{168     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a477f8f9af5573b07fcd82b63e35cc117}{render\_imag}}();}
+\DoxyCodeLine{169 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,108 @@
+@startuml Ray Tracing
+
+class Scene << (S , #FFAAAA) >> {
+  - objects: vector<Primitive*>
+  - lights: vector<Light*>
+  - camera: Camera
+
+  + Scene()
+  + load_settings()
+  + render_image()
+}
+
+class Ray << (R, #FF00FF) >> {
+  - location: Vector3d
+  - direction: Vector3d
+  - ref_index: double
+
+  + Ray()
+  + Ray(loc: Vector3d, direct: Vector3d, refraction_index: double)
+  + set_location(loc: Vector3d)
+  + set_direction(direct: Vector3d)
+  + get_location(): Vector3d
+  + get_direction(): Vector3d
+  + trace_ray(objects: vector<Primitive*>, lights: vector<Light*>, bounces: int): Vector3d
+  + compute_closest_object(objects: vector<Primitive*>, distance: double&): int
+  + compute_light(objects: vector<Primitive*>, lights: vector<Light*>, intersection: Vector3d): Vector3d
+}
+
+class Scene_Element << (S , #0000FA) >> {
+  # location: Vector3d
+  # rotation: Vector3d
+  # scale: Vector3d
+
+  + Scene_Element(location: Vector3d, rotation: Vector3d, scale: Vector3d)
+  + Scene_Element()
+  + get_location(): Vector3d
+  + get_rotation(): Vector3d
+  + get_scale(): Vector3d
+  + global(local_point: Vector3d): Vector3d
+}
+
+class Camera << (C, #00AA00) >> {
+  + screen_res: vector<int>
+  + screen_points: vector<Vector3d>
+
+  + Camera(location: Vector3d, rotation: Vector3d, depth: double)
+  + Camera()
+  + compute_screen_points()
+  + send_rays(objects: vector<Primitive*>, lights: vector<Light*>): vector<Vector3d>
+}
+Scene_Element <|-- Camera
+
+class Light << (L, #FFFF00) >> {
+  - color: Vector3d
+
+  + Light(location: Vector3d, color: Vector3d)
+  + Light(location: Vector3d, color: double)
+  + get_color(): Vector3d
+}
+Scene_Element <|-- Light
+
+class Primitive << (P, #FF7700) >> {
+  - ref_index: double
+  + color: Vector3d
+
+  + Primitive(location: Vector3d, rotation: Vector3d, scale: Vector3d, color: Vector3d, refraction_index: double)
+  + Primitive()
+  + get_color(): Vector3d
+  + get_refraction_index(): double
+  + is_hit(r: Ray*): double
+  + normal(intersection: Vector3d): Vector3d
+  + reflect_ray(r: Ray, intersection: Vector3d): Ray
+}
+Scene_Element <|-- Primitive
+
+class Intersection {
+  - components: vector<Primitive*>
+
+  + Intersection(location: Vector3d, rotation: Vector3d, scale: Vector3d, ambient: Vector3d, diffuse: Vector3d, specular: Vector3d, reflected: Vector3d, refracted: Vector3d, shininess: double, refraction_index: double, components: vector<Primitive*>)
+  + is_hit(r: Ray*): double
+  + inside(point: Vector3d): bool
+  + normal(intersection: Vector3d): Vector3d
+}
+Primitive <|-- Intersection
+
+class Sphere << (S, #0000FF) >> {
+  + Sphere(location: Vector3d, scale: double, color: Vector3d, refraction_index: double)
+  + is_hit(r: Ray*): double
+  + normal(intersection: Vector3d): Vector3d
+}
+Primitive <|-- Sphere
+
+class Plane << (P, #00FF00) >> {
+  + Plane(location: Vector3d, rotation: Vector3d, color: Vector3d, ref_index: double)
+  + is_hit(r: Ray*): double
+  + normal(intersection: Vector3d): Vector3d
+}
+Primitive <|-- Plane
+
+class Cube {
+  - planes: vector<Plane*>
+  + Cube(location: Vector3d, rotation: Vector3d, scale: Vector3d, ambient: Vector3d, diffuse: Vector3d, specular: Vector3d, reflected: Vector3d, refracted: Vector3d, shininess: double, refraction_index: double)
+  + is_hit(r: Ray*): double
+  + inside(point: Vector3d): bool
+  + normal(intersection: Vector3d): Vector3d
+}
+Primitive <|-- Cube
+@enduml

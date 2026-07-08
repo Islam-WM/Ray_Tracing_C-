@@ -1,0 +1,40 @@
+\hypertarget{ray_8h_source}{}\doxysection{ray.\+h}
+\label{ray_8h_source}\index{include/ray.h@{include/ray.h}}
+\mbox{\hyperlink{ray_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_ray}{Ray}}\{}
+\DoxyCodeLine{19     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{25     Vector3d \mbox{\hyperlink{class_ray_ae90a959a1eda5e48d0baa05ebb502297}{location}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{36     Vector3d \mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{direction}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ray_a1aba690596c1ea81d944f3da1aab1568}{ref\_index}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{public}:}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_ray_a2e3d2c29f2df4ab3da10da79d4acb852}{Ray}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{69     \mbox{\hyperlink{class_ray_a2e3d2c29f2df4ab3da10da79d4acb852}{Ray}}(Vector3d loc, Vector3d direct, \textcolor{keywordtype}{double} refraction\_index);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ray_ac77776e05e8f7340dd75791f86d5982c}{set\_location}}(Vector3d loc);}
+\DoxyCodeLine{85         }
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ray_a659569215d12cb9ba1772a00d7125791}{set\_direction}}(Vector3d direct);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{113     Vector3d \mbox{\hyperlink{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}{get\_location}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{127     Vector3d \mbox{\hyperlink{class_ray_a7bc6c658978169b520999fe787f81cf3}{get\_direction}}();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{136     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ray_abd5f3142816b4678d49536ec3f2d7669}{get\_ref\_index}}();}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{157     Vector3d \mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{trace\_ray}}(vector<Primitive*> objects, vector<Light*> lights, \textcolor{keywordtype}{int} bounces); \textcolor{comment}{// returns color of the ray}}
+\DoxyCodeLine{158     }
+\DoxyCodeLine{178     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ray_abee73aba07b7699124bc5c5e14ac714f}{compute\_closest\_object}}(vector<Primitive*> objects, \textcolor{keywordtype}{double}\& distance); \textcolor{comment}{// returns the index of the closest and stores the distance in distance, if no object is hit the function returns -\/1}}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{198     Vector3d \mbox{\hyperlink{class_ray_acfe05d1c8fcd5b84043a9fca81084a58}{compute\_light}}(vector<Primitive*> objects,vector<Light*> lights, Vector3d intersection); \textcolor{comment}{// conpute the light value at the intersection}}
+\DoxyCodeLine{199 \};}
+
+\end{DoxyCode}

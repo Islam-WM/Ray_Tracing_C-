@@ -1,0 +1,381 @@
+\hypertarget{class_ray}{}\doxysection{Ray Class Reference}
+\label{class_ray}\index{Ray@{Ray}}
+
+
+The class \mbox{\hyperlink{class_ray}{Ray}} provides the basic functionalities needed to trace a ray. Like reflection, refraction...  
+
+
+
+
+{\ttfamily \#include $<$ray.\+h$>$}
+
+
+
+Collaboration diagram for Ray\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_ray__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ray_a2e3d2c29f2df4ab3da10da79d4acb852}{Ray}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ray_a6e150115164ee9ddd7a2a8407b9e2b2f}{Ray}} (Vector3d loc, Vector3d direct, double refraction\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Base Constructor\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ray_ac77776e05e8f7340dd75791f86d5982c}{set\+\_\+location}} (Vector3d loc)
+\begin{DoxyCompactList}\small\item\em set\+\_\+location can be used to change the location of a ray \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ray_a659569215d12cb9ba1772a00d7125791}{set\+\_\+direction}} (Vector3d direct)
+\begin{DoxyCompactList}\small\item\em set\+\_\+direction can be used to change the direction of a ray \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}{get\+\_\+location}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+location returns the location of a ray \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_ray_a7bc6c658978169b520999fe787f81cf3}{get\+\_\+direction}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+direction returns the direction of a ray \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ray_abd5f3142816b4678d49536ec3f2d7669}{get\+\_\+ref\+\_\+index}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+direction returns the refraction index of a ray \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{trace\+\_\+ray}} (vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$ objects, vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$ lights, int bounces)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{trace\+\_\+ray()}} traces a \mbox{\hyperlink{class_ray}{Ray}} through the scene \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ray_abee73aba07b7699124bc5c5e14ac714f}{compute\+\_\+closest\+\_\+object}} (vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$ objects, double \&distance)
+\begin{DoxyCompactList}\small\item\em Computes the Object the \mbox{\hyperlink{class_ray}{Ray}} hits first and the distance. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_ray_acfe05d1c8fcd5b84043a9fca81084a58}{compute\+\_\+light}} (vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$ objects, vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$ lights, Vector3d intersection)
+\begin{DoxyCompactList}\small\item\em Computes the sum of all lights that hit a point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3d \mbox{\hyperlink{class_ray_ae90a959a1eda5e48d0baa05ebb502297}{location}}
+\begin{DoxyCompactList}\small\item\em location stores the location of a ray in the global space \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{direction}}
+\begin{DoxyCompactList}\small\item\em direction stores the normalized directional vector of a ray in the global space \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ray_a1aba690596c1ea81d944f3da1aab1568}{ref\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em ref\+\_\+index stores the refraction index of the object/medium that the ray is contained in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class \mbox{\hyperlink{class_ray}{Ray}} provides the basic functionalities needed to trace a ray. Like reflection, refraction... 
+
+Rays consist of a Point in the global space and a vector. Upon hitting an Object new Rays are created that help compute reflection, refraction, ... 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ray_a2e3d2c29f2df4ab3da10da79d4acb852}\label{class_ray_a2e3d2c29f2df4ab3da10da79d4acb852}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor\+: 
+
+Default Parameters\+: ~\newline
+
+
+location \+: \{0,0,0\} ~\newline
+ direction \+: \{0,0,0\} ~\newline
+ ref\+\_\+index \+: 1 ~\newline
+ \mbox{\Hypertarget{class_ray_a6e150115164ee9ddd7a2a8407b9e2b2f}\label{class_ray_a6e150115164ee9ddd7a2a8407b9e2b2f}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{Vector3d}]{loc,  }\item[{Vector3d}]{direct,  }\item[{double}]{refraction\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Base Constructor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_ae90a959a1eda5e48d0baa05ebb502297}{Ray\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{Ray\+::direction}} \mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{direction}} is normalized upon initialization of the object =\texorpdfstring{$>$}{>} param \mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{direction}} is not required to be normalized 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ref\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_a1aba690596c1ea81d944f3da1aab1568}{Ray\+::ref\+\_\+index}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ray_abee73aba07b7699124bc5c5e14ac714f}\label{class_ray_abee73aba07b7699124bc5c5e14ac714f}} 
+\index{Ray@{Ray}!compute\_closest\_object@{compute\_closest\_object}}
+\index{compute\_closest\_object@{compute\_closest\_object}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{compute\_closest\_object()}{compute\_closest\_object()}}
+{\footnotesize\ttfamily int Ray\+::compute\+\_\+closest\+\_\+object (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$}]{objects,  }\item[{double \&}]{distance }\end{DoxyParamCaption})}
+
+
+
+Computes the Object the \mbox{\hyperlink{class_ray}{Ray}} hits first and the distance. 
+
+Computes whether a ray hits an Object, if not the function returns -\/1, else distance is set to the distance to the object from the location of the ray. See \mbox{\hyperlink{class_ray_ae90a959a1eda5e48d0baa05ebb502297}{Ray\+::location}}
+
+And the function returns the index of the object in the objects vector that is hit first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em objects} & A vector of pointers to all renderable objects in the scene \\
+\hline
+{\em lights} & A vector of pointers to all light sources in the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the Object that is hit in the vector of objects. Or if no object is hit -\/1.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The intersection of the ray with the object, can be computed with\+: location(of the ray) + direction(of the ray) $\ast$ distance because direction is normalized 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}{Ray\+::direction}} 
+
+Ray\+::trace\+\_\+ray(vector$<$\+Object$\ast$$>$ objects, vector$<$\+Light$\ast$$>$ lights, int bounces) 
+
+Ray\+::compute\+\_\+light(vector$<$\+Object$\ast$$>$ objects, double\& distance, Vector3d intersection) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_acfe05d1c8fcd5b84043a9fca81084a58}\label{class_ray_acfe05d1c8fcd5b84043a9fca81084a58}} 
+\index{Ray@{Ray}!compute\_light@{compute\_light}}
+\index{compute\_light@{compute\_light}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{compute\_light()}{compute\_light()}}
+{\footnotesize\ttfamily Vector3d Ray\+::compute\+\_\+light (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$}]{objects,  }\item[{vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$}]{lights,  }\item[{Vector3d}]{intersection }\end{DoxyParamCaption})}
+
+
+
+Computes the sum of all lights that hit a point. 
+
+Checks for each light if it can hit the intersection point and sum up the lights multiplied with \texorpdfstring{$<$}{<}(intersection -\/ light.\+location, normal of the object\texorpdfstring{$>$}{>} (Lambert\textquotesingle{}s Rule)
+
+
+\begin{DoxyParams}{Parameters}
+{\em objects} & A vector of pointers to all renderable objects in the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene_a1c6fc45451ebe091b9741f11acb3cce2}{Scene\+::objects}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em lights} & A vector of pointers to all light sources in the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene}{Scene}}\+:\+: lights 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em intersection} & The point for which the light value is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector3d that contains RGB values for the light intensity
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Ray\+::trace\+\_\+ray(vector$<$\+Object$\ast$$>$ objects, vector$<$\+Light$\ast$$>$ lights, int bounces) 
+
+Ray\+::compute\+\_\+closest\+\_\+object(vector$<$\+Object$\ast$$>$ objects, double\& distance, double\& distance) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_a7bc6c658978169b520999fe787f81cf3}\label{class_ray_a7bc6c658978169b520999fe787f81cf3}} 
+\index{Ray@{Ray}!get\_direction@{get\_direction}}
+\index{get\_direction@{get\_direction}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
+{\footnotesize\ttfamily Vector3d Ray\+::get\+\_\+direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+direction returns the direction of a ray 
+
+\begin{DoxyReturn}{Returns}
+direction of the ray
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_ac77776e05e8f7340dd75791f86d5982c}{Ray\+::set\+\_\+location(\+Vector3d loc)}} ~\newline
+ 
+
+\mbox{\hyperlink{class_ray_a659569215d12cb9ba1772a00d7125791}{Ray\+::set\+\_\+direction(\+Vector3d direct)}}
+
+\mbox{\hyperlink{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}{Ray\+::get\+\_\+location()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}\label{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}} 
+\index{Ray@{Ray}!get\_location@{get\_location}}
+\index{get\_location@{get\_location}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{get\_location()}{get\_location()}}
+{\footnotesize\ttfamily Vector3d Ray\+::get\+\_\+location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+location returns the location of a ray 
+
+\begin{DoxyReturn}{Returns}
+location of the ray
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_ac77776e05e8f7340dd75791f86d5982c}{Ray\+::set\+\_\+location(\+Vector3d loc)}} ~\newline
+ 
+
+\mbox{\hyperlink{class_ray_a659569215d12cb9ba1772a00d7125791}{Ray\+::set\+\_\+direction(\+Vector3d direct)}}
+
+\mbox{\hyperlink{class_ray_a7bc6c658978169b520999fe787f81cf3}{Ray\+::get\+\_\+direction()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_abd5f3142816b4678d49536ec3f2d7669}\label{class_ray_abd5f3142816b4678d49536ec3f2d7669}} 
+\index{Ray@{Ray}!get\_ref\_index@{get\_ref\_index}}
+\index{get\_ref\_index@{get\_ref\_index}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{get\_ref\_index()}{get\_ref\_index()}}
+{\footnotesize\ttfamily double Ray\+::get\+\_\+ref\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+direction returns the refraction index of a ray 
+
+\begin{DoxyReturn}{Returns}
+refraction index of the ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ray_a659569215d12cb9ba1772a00d7125791}\label{class_ray_a659569215d12cb9ba1772a00d7125791}} 
+\index{Ray@{Ray}!set\_direction@{set\_direction}}
+\index{set\_direction@{set\_direction}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{set\_direction()}{set\_direction()}}
+{\footnotesize\ttfamily void Ray\+::set\+\_\+direction (\begin{DoxyParamCaption}\item[{Vector3d}]{direct }\end{DoxyParamCaption})}
+
+
+
+set\+\_\+direction can be used to change the direction of a ray 
+
+direct is normalized and direction is set to direct.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direct} & new direction of the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ray_a659569215d12cb9ba1772a00d7125791}{Ray\+::set\+\_\+direction(\+Vector3d direct)}} ~\newline
+
+
+\mbox{\hyperlink{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}{Ray\+::get\+\_\+location()}} 
+
+\mbox{\hyperlink{class_ray_a7bc6c658978169b520999fe787f81cf3}{Ray\+::get\+\_\+direction()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_ac77776e05e8f7340dd75791f86d5982c}\label{class_ray_ac77776e05e8f7340dd75791f86d5982c}} 
+\index{Ray@{Ray}!set\_location@{set\_location}}
+\index{set\_location@{set\_location}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{set\_location()}{set\_location()}}
+{\footnotesize\ttfamily void Ray\+::set\+\_\+location (\begin{DoxyParamCaption}\item[{Vector3d}]{loc }\end{DoxyParamCaption})}
+
+
+
+set\+\_\+location can be used to change the location of a ray 
+
+location of the ray is set to loc
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & new location of the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Ray\+::set\+\_\+rotation(\+Vector3d direct) ~\newline
+
+
+\mbox{\hyperlink{class_ray_a0faf7dc0bd531ddb6aca8f1c31307b34}{Ray\+::get\+\_\+location()}} 
+
+\mbox{\hyperlink{class_ray_a7bc6c658978169b520999fe787f81cf3}{Ray\+::get\+\_\+direction()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ray_a9d678eca25578b3db95cd4a4e085b45d}\label{class_ray_a9d678eca25578b3db95cd4a4e085b45d}} 
+\index{Ray@{Ray}!trace\_ray@{trace\_ray}}
+\index{trace\_ray@{trace\_ray}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{trace\_ray()}{trace\_ray()}}
+{\footnotesize\ttfamily Vector3d Ray\+::trace\+\_\+ray (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$}]{objects,  }\item[{vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$}]{lights,  }\item[{int}]{bounces }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{trace\+\_\+ray()}} traces a \mbox{\hyperlink{class_ray}{Ray}} through the scene 
+
+\mbox{\hyperlink{class_ray_a9d678eca25578b3db95cd4a4e085b45d}{trace\+\_\+ray()}} is the function that checks if a ray hits an object. If it does it computes a return\+\_\+color for the ray which consists of ambient light, direct light through light sources, reflection, refraction,... Inorder to compute reflection, refraction,... new rays are send recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em objects} & A vector of pointers to all renderable objects in the scene \\
+\hline
+{\em lights} & A vector of pointers to all light sources in the scene \\
+\hline
+{\em bounces} & The number of times the light has bounced including this ray. (If a ray hits an object, this as a bounce and rays are send out.) The number of bounces is relevant in order to limit the render time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \char`\"{}color of the ray\char`\"{}. The color of the point the object that the ray hits times \texorpdfstring{$<$}{<}angle of incidence, normal of the object\texorpdfstring{$>$}{>}, or in case no object is hit the color of the backgound
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function does not handle overflow or other error conditions. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Ray\+::compute\+\_\+closest\+\_\+object(vector$<$\+Object$\ast$$>$ objects, double\& distance) Which is used to compute the object a ray hits. 
+
+Ray\+::compute\+\_\+light(vector$<$\+Object$\ast$$>$ objects, double\& distance, Vector3d intersection) Which is used to compute the sum of all lights that direcly hit the point on an object. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}\label{class_ray_a7c858e0b9ee6c0dca48db391e26c0f62}} 
+\index{Ray@{Ray}!direction@{direction}}
+\index{direction@{direction}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily Vector3d Ray\+::direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+direction stores the normalized directional vector of a ray in the global space 
+
+The format of direction is \{x, y, z\}
+
+\begin{DoxyNote}{Note}
+Not to be confused with Object\+::rotation, where the rotation of the object is determined by Euler angles 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Object\+::rotation 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+direction is normalized =\texorpdfstring{$>$}{>} length of direction is equal to 1. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_ray_ae90a959a1eda5e48d0baa05ebb502297}\label{class_ray_ae90a959a1eda5e48d0baa05ebb502297}} 
+\index{Ray@{Ray}!location@{location}}
+\index{location@{location}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily Vector3d Ray\+::location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+location stores the location of a ray in the global space 
+
+The format of location is \{x, y, z\} \mbox{\Hypertarget{class_ray_a1aba690596c1ea81d944f3da1aab1568}\label{class_ray_a1aba690596c1ea81d944f3da1aab1568}} 
+\index{Ray@{Ray}!ref\_index@{ref\_index}}
+\index{ref\_index@{ref\_index}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{ref\_index}{ref\_index}}
+{\footnotesize\ttfamily double Ray\+::ref\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ref\+\_\+index stores the refraction index of the object/medium that the ray is contained in 
+
+Further explanation of the refraction index can be found here\+: \begin{DoxySeeAlso}{See also}
+Object\+::ref\+\_\+index
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The ref\+\_\+index of a \mbox{\hyperlink{class_ray}{Ray}} refers to the ref\+\_\+index of the Object/medium that the ray is passing through 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ray_8h}{ray.\+h}}\item 
+src/\mbox{\hyperlink{ray_8cpp}{ray.\+cpp}}\end{DoxyCompactItemize}

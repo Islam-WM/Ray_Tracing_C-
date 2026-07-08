@@ -1,0 +1,133 @@
+\hypertarget{class_scene}{}\doxysection{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+The \mbox{\hyperlink{class_scene}{Scene}} class stores the objects and lights of a \mbox{\hyperlink{class_scene}{Scene}} and takes care of the setup of the render.  
+
+
+
+
+{\ttfamily \#include $<$scene.\+h$>$}
+
+
+
+Collaboration diagram for Scene\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scene_ad10176d75a9cc0da56626f682d083507}\label{class_scene_ad10176d75a9cc0da56626f682d083507}} 
+{\bfseries Scene} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor creates an empty scene with no objects and lights. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a1a972acb9024dd0fa94345f0e937453a}{load\+\_\+settings}} ()
+\begin{DoxyCompactList}\small\item\em Loads Settings from \char`\"{}settings.\+json\char`\"{} and builds the creates the objects, lights and camera for the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a477f8f9af5573b07fcd82b63e35cc117}{render\+\_\+imag}} ()
+\begin{DoxyCompactList}\small\item\em The function sets up to camera, initiates the rendering process and stores the image that the camera returns in the \char`\"{}output\+\_\+image.\+png\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_primitive}{Primitive}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a1c6fc45451ebe091b9741f11acb3cce2}{objects}}
+\begin{DoxyCompactList}\small\item\em objects stores pointers to all renderable objects in the scene. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_light}{Light}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a0cb559746762b88aafb3a6b5c45576bc}{lights}}
+\begin{DoxyCompactList}\small\item\em lights stores pointers to all light sources (except for the ambient lighting) in the scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_a8b48957edffe8db43cbbd879386ee9c5}\label{class_scene_a8b48957edffe8db43cbbd879386ee9c5}} 
+\mbox{\hyperlink{class_camera}{Camera}} $\ast$ {\bfseries camera}
+\begin{DoxyCompactList}\small\item\em camera stores a pointer to the camera that is used for rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_scene}{Scene}} class stores the objects and lights of a \mbox{\hyperlink{class_scene}{Scene}} and takes care of the setup of the render. 
+
+The \mbox{\hyperlink{class_scene}{Scene}} class provides functions to read the settings and initiates the render process. It stores the objects, lights and camera as members.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]scene namespace rather than class? 
+
+Medium class to store the medium settings \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_a1a972acb9024dd0fa94345f0e937453a}\label{class_scene_a1a972acb9024dd0fa94345f0e937453a}} 
+\index{Scene@{Scene}!load\_settings@{load\_settings}}
+\index{load\_settings@{load\_settings}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{load\_settings()}{load\_settings()}}
+{\footnotesize\ttfamily void Scene\+::load\+\_\+settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads Settings from \char`\"{}settings.\+json\char`\"{} and builds the creates the objects, lights and camera for the scene. 
+
+Settings included in the settings.\+json should be\+:
+
+Parameters for the camera \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_camera}{Camera}}
+\end{DoxySeeAlso}
+General parameters for the scene\+: under \char`\"{}medium\char`\"{} in the settings.\+json include ambient light values of the scene, refraction index of the scene medium,...
+
+Parameters for Objects\+: \begin{DoxySeeAlso}{See also}
+Object 
+
+\mbox{\hyperlink{class_sphere}{Sphere}} 
+
+\mbox{\hyperlink{class_plane}{Plane}} is under \char`\"{}halfspace\char`\"{} in settings.\+json
+\end{DoxySeeAlso}
+Parameters for the lights\+: \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_light}{Light}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Currently no support for unions, intersections and exclusions 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_scene_a477f8f9af5573b07fcd82b63e35cc117}\label{class_scene_a477f8f9af5573b07fcd82b63e35cc117}} 
+\index{Scene@{Scene}!render\_imag@{render\_imag}}
+\index{render\_imag@{render\_imag}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{render\_imag()}{render\_imag()}}
+{\footnotesize\ttfamily void Scene\+::render\+\_\+imag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function sets up to camera, initiates the rendering process and stores the image that the camera returns in the \char`\"{}output\+\_\+image.\+png\char`\"{}. 
+
+The function provides the camera with the neccesarry settings and calls the sends\+\_\+rays() function to initiate the render. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{Camera\+::compute\+\_\+screen\+\_\+points()}} 
+
+Camera\+::send\+\_\+rays(vector$<$\+Object$\ast$$>$ objects, vector$<$\+Light$\ast$$>$ lights)
+\end{DoxySeeAlso}
+The function also calls the \mbox{\hyperlink{scene_8h_a07bd94c4169974d349231061428aad3e}{write\+\_\+img\+\_\+open\+\_\+cv(vector$<$\+Vector3d$>$ img\+\_\+data ,int width, int height)}} function to save the image in \char`\"{}output\+\_\+image.\+png\char`\"{}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{scene_8h_a07bd94c4169974d349231061428aad3e}{write\+\_\+img\+\_\+open\+\_\+cv(vector$<$\+Vector3d$>$ img\+\_\+data ,int width, int height)}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000007}{Todo}}]calling compute screen points makes more sense in load\+\_\+settings or somewhere else. \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_scene_a0cb559746762b88aafb3a6b5c45576bc}\label{class_scene_a0cb559746762b88aafb3a6b5c45576bc}} 
+\index{Scene@{Scene}!lights@{lights}}
+\index{lights@{lights}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{lights}{lights}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_light}{Light}}$\ast$$>$ Scene\+::lights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+lights stores pointers to all light sources (except for the ambient lighting) in the scene. 
+
+For now these only include Point Lights. \mbox{\Hypertarget{class_scene_a1c6fc45451ebe091b9741f11acb3cce2}\label{class_scene_a1c6fc45451ebe091b9741f11acb3cce2}} 
+\index{Scene@{Scene}!objects@{objects}}
+\index{objects@{objects}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_primitive}{Primitive}}$\ast$$>$ Scene\+::objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+objects stores pointers to all renderable objects in the scene. 
+
+These include \mbox{\hyperlink{class_primitive}{Primitive}} Objects like Planes, Spheres,... and Unions, \mbox{\hyperlink{class_intersection}{Intersection}} and Exclusions 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{scene_8h}{scene.\+h}}\item 
+src/\mbox{\hyperlink{scene_8cpp}{scene.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,211 @@
+\hypertarget{class_object}{}\doxysection{Object Class Reference}
+\label{class_object}\index{Object@{Object}}
+
+
+Virtual \mbox{\hyperlink{class_object}{Object}} class that acts as the base for all movable objects in the scene.  
+
+
+
+
+{\ttfamily \#include $<$objects.\+h$>$}
+
+
+
+Inheritance diagram for Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_a4190289d3404df67412eabcaeb989d69}{Object}} (Vector3d \mbox{\hyperlink{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}{location}}, Vector3d \mbox{\hyperlink{class_object_ad88b28b78670edd0dbec0e523530c27a}{rotation}}, Vector3d \mbox{\hyperlink{class_object_a35bbb980d4e10cd22f3d9ab73676a485}{scale}}, Vector3d \mbox{\hyperlink{class_object_ab8f6cedcdb168a770f54cefde275b7e0}{color}}, double refraction\+\_\+index)
+\item 
+\mbox{\Hypertarget{class_object_a0a195f0ddfb2a606e9f3433ae0f1586c}\label{class_object_a0a195f0ddfb2a606e9f3433ae0f1586c}} 
+{\bfseries Object} (Vector3d \mbox{\hyperlink{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}{location}}, Vector3d \mbox{\hyperlink{class_object_ad88b28b78670edd0dbec0e523530c27a}{rotation}}, Vector3d \mbox{\hyperlink{class_object_a35bbb980d4e10cd22f3d9ab73676a485}{scale}}, Vector3d \mbox{\hyperlink{class_object_ab8f6cedcdb168a770f54cefde275b7e0}{color}})
+\item 
+\mbox{\Hypertarget{class_object_aad60553924ade403d3b3e69a8ddea309}\label{class_object_aad60553924ade403d3b3e69a8ddea309}} 
+Vector3d {\bfseries get\+\_\+location} ()
+\begin{DoxyCompactList}\small\item\em returns the location of the object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_object_ac1f87ffd2beebc05dfed1b8e34da2a3e}\label{class_object_ac1f87ffd2beebc05dfed1b8e34da2a3e}} 
+Vector3d {\bfseries get\+\_\+rotation} ()
+\item 
+\mbox{\Hypertarget{class_object_a3f64a78334b10e0a18137d863e101d7b}\label{class_object_a3f64a78334b10e0a18137d863e101d7b}} 
+Vector3d {\bfseries get\+\_\+scale} ()
+\item 
+\mbox{\Hypertarget{class_object_a6d9f5eef382544b267e95f5947a7324e}\label{class_object_a6d9f5eef382544b267e95f5947a7324e}} 
+Vector3d {\bfseries get\+\_\+color} ()
+\item 
+\mbox{\Hypertarget{class_object_ac9f1bcca7d6315e369d93f77b6b4dde0}\label{class_object_ac9f1bcca7d6315e369d93f77b6b4dde0}} 
+double {\bfseries get\+\_\+refraction\+\_\+index} ()
+\item 
+\mbox{\Hypertarget{class_object_ab362da9df42f32896d5e3c5c6ea053e6}\label{class_object_ab362da9df42f32896d5e3c5c6ea053e6}} 
+virtual double {\bfseries is\+\_\+hit} (\mbox{\hyperlink{class_ray}{Ray}} $\ast$r)=0
+\item 
+\mbox{\Hypertarget{class_object_a6b122ba9de20a96ece21915dc3447e9f}\label{class_object_a6b122ba9de20a96ece21915dc3447e9f}} 
+virtual Vector3d {\bfseries normal} (Vector3d intersection)=0
+\item 
+\mbox{\Hypertarget{class_object_a2b2d90d07b6bfe47dcc56f59a585413d}\label{class_object_a2b2d90d07b6bfe47dcc56f59a585413d}} 
+\mbox{\hyperlink{class_ray}{Ray}} {\bfseries reflect\+\_\+ray} (\mbox{\hyperlink{class_ray}{Ray}} r, Vector3d intersection)
+\item 
+\mbox{\Hypertarget{class_object_ad173fe81e8dbb160bd0cc4849a636676}\label{class_object_ad173fe81e8dbb160bd0cc4849a636676}} 
+Vector3d {\bfseries global} (Vector3d local\+\_\+point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3d \mbox{\hyperlink{class_object_ab8f6cedcdb168a770f54cefde275b7e0}{color}}
+\begin{DoxyCompactList}\small\item\em color stores the ambient color values of the object. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_object_a3ab0c51e570a8cc3b74a0136365c8bda}\label{class_object_a3ab0c51e570a8cc3b74a0136365c8bda}} 
+bool {\bfseries light\+\_\+src}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3d \mbox{\hyperlink{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}{location}}
+\begin{DoxyCompactList}\small\item\em location stores the location of an object in the global space \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_object_ad88b28b78670edd0dbec0e523530c27a}{rotation}}
+\begin{DoxyCompactList}\small\item\em rotation stores the rotation of an object in the global space \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_object_a35bbb980d4e10cd22f3d9ab73676a485}{scale}}
+\begin{DoxyCompactList}\small\item\em scale stores the scale of an object in the global space \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_object_a5c5d797358e5ffc1c7fec05243d5fd94}{ref\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em ref\+\_\+index stores the refraction index of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Virtual \mbox{\hyperlink{class_object}{Object}} class that acts as the base for all movable objects in the scene. 
+
+Objects are all non-\/temporary elements that have a location in the scene.(primitive Objects, camera, lights, ...) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_object_a4190289d3404df67412eabcaeb989d69}\label{class_object_a4190289d3404df67412eabcaeb989d69}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{rotation,  }\item[{Vector3d}]{scale,  }\item[{Vector3d}]{color,  }\item[{double}]{refraction\+\_\+index }\end{DoxyParamCaption})}
+
+default constructor with refraction index
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}{Object\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object_ad88b28b78670edd0dbec0e523530c27a}{Object\+::rotation}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object_a35bbb980d4e10cd22f3d9ab73676a485}{Object\+::scale}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object_ab8f6cedcdb168a770f54cefde275b7e0}{Object\+::color}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em refraction\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object_a5c5d797358e5ffc1c7fec05243d5fd94}{Object\+::ref\+\_\+index}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+this constructor takes a refraction\+\_\+index as input. For objects without 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_object_ab8f6cedcdb168a770f54cefde275b7e0}\label{class_object_ab8f6cedcdb168a770f54cefde275b7e0}} 
+\index{Object@{Object}!color@{color}}
+\index{color@{color}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily Vector3d Object\+::color}
+
+
+
+color stores the ambient color values of the object. ~\newline
+ 
+
+The format of color is \{red, green, blue\} \mbox{\Hypertarget{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}\label{class_object_af1706ca827eea1e5db1d7d2dec44ba8f}} 
+\index{Object@{Object}!location@{location}}
+\index{location@{location}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily Vector3d Object\+::location\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+location stores the location of an object in the global space 
+
+The format of location is \{x, y, z\} \mbox{\Hypertarget{class_object_a5c5d797358e5ffc1c7fec05243d5fd94}\label{class_object_a5c5d797358e5ffc1c7fec05243d5fd94}} 
+\index{Object@{Object}!ref\_index@{ref\_index}}
+\index{ref\_index@{ref\_index}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{ref\_index}{ref\_index}}
+{\footnotesize\ttfamily double Object\+::ref\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ref\+\_\+index stores the refraction index of the object 
+
+The refraction index is used to calculate the refraction angle when going from one object/medium into another.
+
+\begin{DoxyNote}{Note}
+Not every child object needs a refraction index, e.\+g. \mbox{\hyperlink{class_camera}{Camera}}. For these objects ref\+\_\+index is set to a default value 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_object}{Object(\+Vector3d location, Vector3d rotation, Vector3d scale, Vector3d color)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_object_ad88b28b78670edd0dbec0e523530c27a}\label{class_object_ad88b28b78670edd0dbec0e523530c27a}} 
+\index{Object@{Object}!rotation@{rotation}}
+\index{rotation@{rotation}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily Vector3d Object\+::rotation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+rotation stores the rotation of an object in the global space 
+
+The format of rotation is \{rotation\+\_\+around\+\_\+x\+\_\+axis, rotation\+\_\+around\+\_\+y\+\_\+axis, rotation\+\_\+around\+\_\+z\+\_\+axis\} The rotation is stored in degrees. \mbox{\Hypertarget{class_object_a35bbb980d4e10cd22f3d9ab73676a485}\label{class_object_a35bbb980d4e10cd22f3d9ab73676a485}} 
+\index{Object@{Object}!scale@{scale}}
+\index{scale@{scale}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily Vector3d Object\+::scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+scale stores the scale of an object in the global space 
+
+The format of scale is \{x, y, z\} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{objects_8h}{objects.\+h}}\item 
+src/\mbox{\hyperlink{objects_8cpp}{objects.\+cpp}}\end{DoxyCompactItemize}

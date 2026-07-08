@@ -1,0 +1,4 @@
+<map id="Camera" name="Camera">
+<area shape="rect" id="node1" title="The Class Camera provides the functionality of the screen." alt="" coords="29,80,97,107"/>
+<area shape="rect" id="node2" href="$class_scene___element.html" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="5,5,120,32"/>
+</map>

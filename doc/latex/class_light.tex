@@ -1,0 +1,156 @@
+\hypertarget{class_light}{}\doxysection{Light Class Reference}
+\label{class_light}\index{Light@{Light}}
+
+
+The \mbox{\hyperlink{class_light}{Light}} class implements a simple point light.  
+
+
+
+
+{\ttfamily \#include $<$light.\+h$>$}
+
+
+
+Inheritance diagram for Light\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_light__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Light\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_light__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_light_a0a81b16c8d02b58fb61f379fed26a91a}{Light}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{color}})
+\begin{DoxyCompactList}\small\item\em Constructor for colored light source\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_light_acd8081b1b01af202ee0ee22c435911e0}{Light}} (Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, double \mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{color}})
+\begin{DoxyCompactList}\small\item\em Constructor for grayscale light source\+: \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{class_light_a0afdfd0906f7f542add5bbe583573a59}{get\+\_\+color}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_light_a0afdfd0906f7f542add5bbe583573a59}{get\+\_\+color()}} returns the color of the \mbox{\hyperlink{class_light}{Light}} source \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3d \mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{color}}
+\begin{DoxyCompactList}\small\item\em Color of the light source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_light}{Light}} class implements a simple point light. 
+
+\mbox{\hyperlink{class_light}{Light}} has a location and a color.
+
+\begin{DoxyNote}{Note}
+The \mbox{\hyperlink{class_light}{Light}} class has been implemented as a child of \mbox{\hyperlink{class_scene___element}{Scene\+\_\+\+Element}} even though it only uses the location, incase one wants to later create different light sources and not just point lights. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_light_a0a81b16c8d02b58fb61f379fed26a91a}\label{class_light_a0a81b16c8d02b58fb61f379fed26a91a}} 
+\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{Light()}{Light()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Light\+::\+Light (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{Vector3d}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructor for colored light source\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{Light\+::color}} Here Vector3d (with format \{red,green,blue\}) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_light_acd8081b1b01af202ee0ee22c435911e0}\label{class_light_acd8081b1b01af202ee0ee22c435911e0}} 
+\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{Light()}{Light()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Light\+::\+Light (\begin{DoxyParamCaption}\item[{Vector3d}]{location,  }\item[{double}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructor for grayscale light source\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{Scene\+\_\+\+Element\+::location}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{Light\+::color}} Here double for gray \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}} \mbox{\hyperlink{class_light_afa266dc597e79f43916eff771d731a70}{color}} value
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+use \mbox{\hyperlink{class_light_a0a81b16c8d02b58fb61f379fed26a91a}{Light(\+Vector3d location, Vector3d color)}} for colored light source 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_light_a0a81b16c8d02b58fb61f379fed26a91a}{Light(\+Vector3d location, Vector3d color)}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_light_a0afdfd0906f7f542add5bbe583573a59}\label{class_light_a0afdfd0906f7f542add5bbe583573a59}} 
+\index{Light@{Light}!get\_color@{get\_color}}
+\index{get\_color@{get\_color}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{get\_color()}{get\_color()}}
+{\footnotesize\ttfamily Vector3d Light\+::get\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_light_a0afdfd0906f7f542add5bbe583573a59}{get\+\_\+color()}} returns the color of the \mbox{\hyperlink{class_light}{Light}} source 
+
+\begin{DoxyReturn}{Returns}
+Color of the \mbox{\hyperlink{class_primitive}{Primitive}}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{class_light_a0afdfd0906f7f542add5bbe583573a59}{get\+\_\+color()}} always returns a Vector3d, even if constructed with gray scale constructor 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_light_acd8081b1b01af202ee0ee22c435911e0}{Light(\+Vector3d location, double color)}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_light_afa266dc597e79f43916eff771d731a70}\label{class_light_afa266dc597e79f43916eff771d731a70}} 
+\index{Light@{Light}!color@{color}}
+\index{color@{color}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily Vector3d Light\+::color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Color of the light source. 
+
+Format \+: \{red,green,blue\} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{light_8h}{light.\+h}}\item 
+src/\mbox{\hyperlink{light_8cpp}{light.\+cpp}}\end{DoxyCompactItemize}

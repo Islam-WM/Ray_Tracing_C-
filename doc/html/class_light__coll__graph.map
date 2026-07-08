@@ -1,0 +1,5 @@
+<map id="Light" name="Light">
+<area shape="rect" id="node1" title="The Light class implements a simple point light." alt="" coords="32,200,83,227"/>
+<area shape="rect" id="node2" href="$class_scene___element.html" title="Virtual Scene_Element class that acts as the base for all movable objects in the scene." alt="" coords="79,124,193,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,80,32"/>
+</map>

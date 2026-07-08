@@ -1,0 +1,7 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node1" title="Virtual Object class that acts as the base for all movable objects in the scene." alt="" coords="132,5,192,32"/>
+<area shape="rect" id="node2" href="$class_camera.html" title="The Class Camera provides the functionality of the screen." alt="" coords="5,80,73,107"/>
+<area shape="rect" id="node3" href="$class_light.html" title=" " alt="" coords="98,80,149,107"/>
+<area shape="rect" id="node4" href="$class_plane.html" title=" " alt="" coords="173,80,228,107"/>
+<area shape="rect" id="node5" href="$class_sphere.html" title=" " alt="" coords="252,80,315,107"/>
+</map>

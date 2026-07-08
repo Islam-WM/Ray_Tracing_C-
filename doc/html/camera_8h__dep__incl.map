@@ -1,0 +1,12 @@
+<map id="include/camera.h" name="include/camera.h">
+<area shape="rect" id="node1" title="This file contains the class camera." alt="" coords="264,5,385,32"/>
+<area shape="rect" id="node2" href="$scene_8h.html" title="This file contains the class scene as well as the global functions." alt="" coords="268,80,381,107"/>
+<area shape="rect" id="node3" href="$light_8h.html" title="This file contains the class light." alt="" coords="5,155,108,181"/>
+<area shape="rect" id="node4" href="$objects_8h.html" title="This file contains the virtual parent class object and it&#39;s child classes Sphere and Plane." alt="" coords="133,155,253,181"/>
+<area shape="rect" id="node5" href="$ray_8h.html" title="This file contains the class ray." alt="" coords="277,155,372,181"/>
+<area shape="rect" id="node6" href="$camera_8cpp.html" title="This file contains the implementation of the camera class." alt="" coords="397,155,509,181"/>
+<area shape="rect" id="node7" href="$light_8cpp.html" title="This file contains the implementation of the light class." alt="" coords="533,155,626,181"/>
+<area shape="rect" id="node8" href="$objects_8cpp.html" title="This file contains the implementation of the object class as well as the sphere and plane classes." alt="" coords="651,155,761,181"/>
+<area shape="rect" id="node9" href="$ray_8cpp.html" title="This file contains the implementation of the ray class." alt="" coords="786,155,871,181"/>
+<area shape="rect" id="node10" href="$scene_8cpp.html" title="This file contains the implementation of the scene class and the global functions." alt="" coords="895,155,999,181"/>
+</map>

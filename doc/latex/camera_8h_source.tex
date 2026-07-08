@@ -1,0 +1,48 @@
+\hypertarget{camera_8h_source}{}\doxysection{camera.\+h}
+\label{camera_8h_source}\index{include/camera.h@{include/camera.h}}
+\mbox{\hyperlink{camera_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{class_camera}{Camera}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_scene___element}{Scene\_Element}}\{}
+\DoxyCodeLine{33     \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \textcolor{comment}{// /**}}
+\DoxyCodeLine{35     \textcolor{comment}{//  * @brief The screen resolution in the format \{x\_resolution, y\_resolution\}}}
+\DoxyCodeLine{36     \textcolor{comment}{//  * }}
+\DoxyCodeLine{37     \textcolor{comment}{//  * The screen resolution refers to the number of pixels on the x and the y axis.}}
+\DoxyCodeLine{38     \textcolor{comment}{//  * }}
+\DoxyCodeLine{39     \textcolor{comment}{//  * @note The default value is \{1920, 1080\}. }}
+\DoxyCodeLine{40     \textcolor{comment}{//  * @warning One needs to be careful with how he chooses the x and y scale and resolution of the camera, }}
+\DoxyCodeLine{41     \textcolor{comment}{//  * because otherwise one will end up with a stretched image. }}
+\DoxyCodeLine{42     \textcolor{comment}{//  * It is advised to follow this rule: scale[0]/screen\_res[0] = scale[1]/screen\_res[1]}}
+\DoxyCodeLine{43     \textcolor{comment}{//  * @note Another way to store the resolution would be to store a dpi and the scale of the screen}}
+\DoxyCodeLine{44     \textcolor{comment}{//  * or to store the dpi and the resolution of the image. We decided to use the resolution and the scale of the screen, }}
+\DoxyCodeLine{45     \textcolor{comment}{//  * as we felt this gives us more control and is easier to work with since both the scale and dpi are values, that don't }}
+\DoxyCodeLine{46     \textcolor{comment}{//  * provide very good intuition for the outcome of the render.}}
+\DoxyCodeLine{47     \textcolor{comment}{//  * }}
+\DoxyCodeLine{48     \textcolor{comment}{//  * @todo store dpi and resolution of the image instead of scale of the camera.}}
+\DoxyCodeLine{49     \textcolor{comment}{//  * @todo add check res/size to read\_settings()}}
+\DoxyCodeLine{50     \textcolor{comment}{// */}}
+\DoxyCodeLine{51     \textcolor{comment}{// vector<int> screen\_res = \{1920,1080\};}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}};}
+\DoxyCodeLine{72     vector<Vector3d> \mbox{\hyperlink{class_camera_a933b62e950043b383e31e22d4967fa80}{screen\_points}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{public}:}
+\DoxyCodeLine{75     }
+\DoxyCodeLine{88     \mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, \textcolor{keywordtype}{double} depth, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}}); \textcolor{comment}{// Base constructor}}
+\DoxyCodeLine{89     }
+\DoxyCodeLine{102     \mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}(Vector3d \mbox{\hyperlink{class_scene___element_a27eb2067d8e8dd3fc913878e6ecf1c11}{location}}, Vector3d \mbox{\hyperlink{class_scene___element_a74af12780d686aacaa40a91e731c0339}{rotation}}, Vector3d \mbox{\hyperlink{class_scene___element_a5791d800823cd05563772a5a2b371dc5}{scale}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a4b5441d3b5923c681c90943665a1f002}{dpi}}); \textcolor{comment}{// Base constructor}}
+\DoxyCodeLine{103     }
+\DoxyCodeLine{119     \mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}(); \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_a8e09889121bbb9f41ef5cb7eed9a5f4f}{compute\_screen\_points}}();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{138     vector<Vector3d> \mbox{\hyperlink{class_camera_ad02014074235cccdb200c70aa0016dad}{send\_rays}}(vector<Primitive*> objects, vector<Light*> lights);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \};}
+\DoxyCodeLine{141 }
+
+\end{DoxyCode}

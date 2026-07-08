@@ -1,0 +1,209 @@
+
+//Color Ray::trace_ray(vector<Object*> objects, vector<Light*> lights, int bounces){
+    Color return_color({30,30,30});
+
+    //--------------------check if ray hits an object-----------------
+
+    double distance;
+    Object* closest_obj;
+    bool hit = compute_closest_object(objects, distance, closest_obj); // check if an Object is hit, and stores the distance and closest object;
+
+    Vector3d intersection = location.vect() + distance * rotation;
+    
+    //-------------------if no object was hit we return the background color----------
+    if(!hit){
+        return return_color;
+    }
+    cout<< closest_obj->color[0]<<endl;
+    //------------------else check if light can hit the intersection----------
+
+    double light_value = compute_light(objects, lights, intersection);
+
+    //-----------------check for reflections----------------------------------
+
+    Color reflected_c({0,0,0});
+    if(bounces < 2){ // send new ray in new direction
+
+        // 1. compute direction and location:
+        // the angle is equal to the between ray and sphereCenter_to_intersection
+        Vector3d intersection = location.vect() + distance * rotation;
+        Vector3d normal_vector = intersection - closest_obj->get_location();
+
+        //mirror ray in relation to the normal vector <=> einfallswinkel=ausfallswinkel
+        Vector3d axes_to_scale = (rotation.dot(normal_vector)/normal_vector.dot(normal_vector))*normal_vector;
+        Vector3d new_ray_rotation = rotation - 2*axes_to_scale;
+        
+        //2. create new Ray and trace the ray
+        Ray r(intersection,new_ray_rotation);
+
+        reflected_c = r.trace_ray(objects, lights, bounces+1);
+    }
+
+    //------------------the color we return is the object color multiplied with the light_value and divided by the distance to the camera-------
+    // cout<< closest_obj->get_location()<<endl;
+    return_color = closest_obj->color;
+    //cout<<"hi"<<endl;
+    return_color = (return_color * light_value  + reflected_c)/ (distance*distance);
+
+    return return_color;
+}
+
+
+bool Ray::compute_closest_object(vector<Object*> objects, double& distance, Object* closest_obj){ // computes closest object and distance
+    double distance_to_closest_obj = 1000.0; //maximum length of a ray
+    // Object closest_obj;
+    bool hit = false;
+    for(Object* obj : objects){
+        //cout<<"hi"<<endl;
+        double radius = obj->get_scale()[0]; // scale is {radius,radius,radius} for sphere, therefore we can just take the first element [0]
+
+        Vector3d Q = location.vect() - obj->get_location();
+
+        double a = rotation.dot(rotation);      // should be = 1
+        double b = 2* Q.dot(rotation);
+        double c = Q.dot(Q) - radius*radius;
+        double d = b*b - 4*a*c;  // discriminant of quadratic
+
+    
+        if(d >= 0){
+            //this means that there are intersections with the sphere
+
+            double dist = findRoots(a, b, c); // returns the smallest root ie. the length of the ray to the sphere
+
+            if(dist >= 0 && dist <= distance_to_closest_obj){
+                hit=true;
+                distance_to_closest_obj = dist;
+                closest_obj = obj;
+                cout<<obj->color[0]<<endl;
+                cout<<closest_obj->color[0]<<endl;
+                //return_color = return_color/distance;
+            }
+        }
+    }
+    distance = distance_to_closest_obj;
+    return hit;
+}
+
+Color Ray::check_for_objects(vector<Object*> objects, int bounces){
+    Color return_color({0,0,0}); //background color
+    double distance_to_closest_obj = 1000.0; //maximum length of a ray
+    Object* closest_obj;
+    bool hit = false;
+
+    for(Object* obj : objects){
+
+        double radius = obj->get_scale()[0]; // scale is {radius,radius,radius} for sphere, therefore we can just take the first element [0]
+
+        Vector3d Q = location.vect() - obj->get_location();
+
+        double a = rotation.dot(rotation);      // should be = 1
+        double b = 2* Q.dot(rotation);
+        double c = Q.dot(Q) - radius*radius;
+        double d = b*b - 4*a*c;  // discriminant of quadratic
+
+
+        //cout<<a<<endl;
+    
+        if(d >= 0){
+            //this means that there are intersections with the sphere
+
+            double distance = findRoots(a, b, c); // returns the smallest root ie. the length of the ray to the sphere
+
+            if(distance >= 0 && distance <= distance_to_closest_obj){
+                hit=true;
+                distance_to_closest_obj = distance;
+                closest_obj = obj;
+                return_color = obj->get_color();
+                //return_color = return_color/distance;
+            }
+        }
+
+    } // if no objects are found
+
+ //      for(Light* light :lights){
+ //        light->get_location();
+ //    }
+
+    // cout<< return_color.red<<endl;
+
+
+    if(hit and bounces < 2){ // send new ray in new direction
+    // 1. compute direction and location:
+    // the angle is equal to the between ray and sphereCenter_to_intersection
+    Vector3d intersection = location.vect() + distance_to_closest_obj * rotation;
+    Vector3d normal_vector = intersection - closest_obj->get_location();
+    //Vector3d axes_to_scale = rotation.dot(normal_vector) * rotation; //(rotation.dot(normal_vector)/normal_vector.dot(normal_vector))*normal_vector
+    Vector3d axes_to_scale = (rotation.dot(normal_vector)/normal_vector.dot(normal_vector))*normal_vector;
+    Vector3d new_ray_rotation = rotation - 2*axes_to_scale;
+
+    Ray r(intersection,new_ray_rotation);
+    Color reflected_c = r.check_for_objects(objects, bounces+1);
+    return_color = return_color + reflected_c;
+    }
+
+    return return_color/(distance_to_closest_obj*distance_to_closest_obj*1/3);
+}
+
+
+size_t Ray::compute_closest_object(vector<Object*> objects, double& distance){ // computes closest object and distance
+    double distance_to_closest_obj = 1000.0; //maximum length of a ray
+    size_t closest_obj_index = -1; // return -1, if no object is hit
+
+    for(size_t i=0; i<objects.size(); i++){
+
+        double radius = objects[i]->get_scale()[0]; // scale is {radius,radius,radius} for sphere, therefore we can just take the first element [0]
+
+        Vector3d Q = location.vect() - objects[i]->get_location();
+
+        double a = rotation.dot(rotation);      // should be = 1
+        double b = 2* Q.dot(rotation);
+        double c = Q.dot(Q) - radius*radius;
+        double d = b*b - 4*a*c;  // discriminant of quadratic
+
+    
+        if(d >= 0){
+            //this means that there are intersections with the sphere
+
+            double dist = findRoots(a, b, c); // returns the smallest root ie. the length of the ray to the sphere
+
+            if(dist >= 0 && dist <= distance_to_closest_obj){
+                distance_to_closest_obj = dist; // store new closest distance
+                closest_obj_index = i; // store new closest object
+            }
+        }
+
+    }
+    distance = distance_to_closest_obj;
+    return closest_obj_index;
+}
+
+
+        // // 1. compute direction and location:
+        // Vector3d normal_vector = objects[closest_obj_index]->normal(intersection);
+
+        // // mirror ray in relation to the normal vector <=> einfallswinkel=ausfallswinkel
+        // Vector3d axes_to_scale = (direction.dot(normal_vector) /
+        //                             normal_vector.dot(normal_vector)) * normal_vector;
+        // Vector3d new_ray_direction = direction - 2*axes_to_scale;
+        
+        // //2. create new Ray and trace the ray
+        // Ray r(intersection,new_ray_direction, objects[closest_obj_index]->get_refraction_index());
+
+
+
+
+    // Camera cam({0,0,-2},{0,30,0},1);
+
+    // vector<Object*> objects = {};
+    // objects.push_back(new Sphere({0,0,3},0.5,{1,0.05,0.05}, 1.5)); //red Sphere
+    // //objects.push_back(new Sphere({-1,0,3},0.5,{0.05,1,0.05}, 1.5)); // green Sphere
+    // //objects.push_back(new Plane({0,-1,0},{0,1,0},{0.2,0.2,0.2})); // gray Plane
+
+
+    // vector<Light*> lights = {};
+    // // lights.push_back(new Light({0,0,3},{10,20,20}));
+    // lights.push_back(new Light({0,5,3},1));
+
+
+    // cam.compute_screen_points(); // computes all points and stores them in a vector
+    // scn.render_imag(cam, objects, lights);
